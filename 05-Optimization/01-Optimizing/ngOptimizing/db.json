@@ -1,0 +1,83 @@
+{
+  "demos": [
+    {
+      "url": "bundles",
+      "title": "Bundle Analyzer",
+      "component": "BundlesComponent",
+      "id": 1,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "logger",
+      "title": "Logger",
+      "component": "LoggerComponent",
+      "id": 2,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "inject-config",
+      "title": "Inject Config",
+      "component": "InjectConfigComponent",
+      "id": 3,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "ngprobe",
+      "title": "ng.probe()",
+      "component": "ConsoleComponent",
+      "id": 4,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "debug-statements",
+      "title": "Debug Statements",
+      "component": "DebugStatementsComponent",
+      "id": 5,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "webworker",
+      "title": "Web Worker",
+      "component": "WebWorkerComponent",
+      "id": 6,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "changedetection",
+      "title": "Change Detection",
+      "component": "ChangeDetectionComponent",
+      "id": 7,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "ngrx-comp",
+      "title": "@ngrx/component",
+      "component": "NgrxCompComponent",
+      "id": 8,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    }
+  ],
+  "food": [
+    { "name": "Pad Thai", "rating": 1 },
+    { "name": "Butter Chicken", "rating": 2 },
+    { "name": "Cannelloni", "rating": 2 },
+    { "name": "Cordon Bleu", "rating": 4 }
+  ],
+  "logs": []
+}

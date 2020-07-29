@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ng-demo-app-ws/ux-system": ["libs/ux-system/src/index.ts"],
+      "@ng-demo-app-ws/material-module": ["libs/material-module/src/index.ts"],
+      "@ng-demo-app-ws/my-material": ["libs/my-material/src/index.ts"],
+      "@ng-demo-app-ws/material": ["libs/material/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
