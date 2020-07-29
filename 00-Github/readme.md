@@ -127,3 +127,45 @@ Fetch from Upstream:
  git merge upstream/master
  git push origin master
 ```
+
+## Git-flow
+
+[Gitflow Cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/)
+
+> Note: Require GIT 2.24.0+ - Check with `git --version`
+
+Initialize repo for gitflow:
+
+```
+git flow init
+```
+
+Start a new feature:
+
+```
+git flow feature start MYFEATURE
+```
+
+Finish feature:
+
+```
+git flow feature finish MYFEATURE
+```
+
+Publish a feature:
+
+```
+git flow feature publish  MYFEATURE
+```
+
+Start a release:
+
+```
+git flow release start RELEASE
+```
+
+Finish a release:
+
+```
+git flow release finish  RELEASE
+```
