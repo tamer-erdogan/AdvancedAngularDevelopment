@@ -1,6 +1,6 @@
 # RxJS Deep Dive
 
-[RxJS Home](https://rxjs-dev.firebaseapp.com/)
+[RxJS Api Reference](https://rxjs-dev.firebaseapp.com/api)
 
 [ReactiveX home](http://reactivex.io/)
 

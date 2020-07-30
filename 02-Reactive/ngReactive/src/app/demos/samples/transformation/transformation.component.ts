@@ -1,13 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { fromEvent, of } from 'rxjs';
-import { delay, mapTo, mergeMap } from 'rxjs/operators';
+import { fromEvent, of, interval } from 'rxjs';
+import {
+  delay,
+  mapTo,
+  mergeMap,
+  concatMap,
+  take,
+  exhaustMap,
+  switchMap,
+} from 'rxjs/operators';
 import { AccountService } from '../account.service';
 import { VouchersService } from '../voucher.service';
 
 @Component({
   selector: 'app-transformation',
   templateUrl: './transformation.component.html',
-  styleUrls: ['./transformation.component.scss']
+  styleUrls: ['./transformation.component.scss'],
 })
 export class TransformationComponent implements OnInit {
   constructor(private vs: VouchersService, private as: AccountService) {}
@@ -20,12 +28,14 @@ export class TransformationComponent implements OnInit {
     clicks.pipe(mapTo('You clicked the button')).subscribe(console.log);
   }
 
-  // faking network request for save
+  //mergeMap is also know under its alias: flatMap
   useMergeMap() {
-    const saveLocation = location => {
-      return of(location).pipe(delay(500));
+    // faking network request for save
+    const saveLocation = (location) => {
+      return of(location).pipe(delay(1500));
     };
-    // streams
+
+    // click as stream
     const click$ = fromEvent(document, 'click');
 
     click$
@@ -34,36 +44,56 @@ export class TransformationComponent implements OnInit {
           return saveLocation({
             x: e.clientX,
             y: e.clientY,
-            timestamp: Date.now()
+            timestamp: Date.now(),
           });
         })
       )
       // Saved! {x: 98, y: 170, ...}
-      .subscribe(r => console.log('Saved!', r));
+      .subscribe((r) => console.log('Saved!', r));
   }
 
-  //TODO: finish useConcatMap
   useConcatMap() {
-    // this.form.valueChanges
-    // .pipe(
-    //     concatMap(formValue => this.http.put(`/api/course/${courseId}`,
-    //                                          formValue))
-    // )
-    // .subscribe(
-    //    saveResult =>  ... handle successful save ...,
-    //     err => ... handle save error ...
-    // );
+    //emit delay value
+    const source = of(2000, 1000);
+    // map value from source into inner observable, when complete emit result and move to next
+    const example = source.pipe(
+      concatMap((val) => of(`Delayed by: ${val}ms`).pipe(delay(val)))
+    );
+    //output: With concatMap: Delayed by: 2000ms, With concatMap: Delayed by: 1000ms
+    const subscribe = example.subscribe((val) =>
+      console.log(`With concatMap: ${val}`)
+    );
+
+    // showing the difference between concatMap and mergeMap
+    const mergeMapExample = source
+      .pipe(
+        // just so we can log this after the first example has run
+        delay(5000),
+        mergeMap((val) => of(`Delayed by: ${val}ms`).pipe(delay(val)))
+      )
+      .subscribe((val) => console.log(`With mergeMap: ${val}`));
   }
 
-  //TODO: #4 02-useSwitchMap
   useSwitchMap() {
-    //   this.bookId.valueChanges.pipe(
-    //     switchMap(id => {
-    //       console.log(id);
-    //       return this.bookService.getBook(id);
-    //     })
-    //  ).subscribe(res => this.book = res);
+    fromEvent(document, 'click')
+      .pipe(
+        // restart counter on every click
+        switchMap(() => interval(1000))
+      )
+      .subscribe(console.log);
   }
 
-  useExhaustMap() {}
+  useExhaustMap() {
+    const firstInterval = interval(1000).pipe(take(10));
+    const secondInterval = interval(1000).pipe(take(2));
+
+    const exhaustSub = firstInterval
+      .pipe(
+        exhaustMap((f) => {
+          console.log(`Emission Corrected of first interval: ${f}`);
+          return secondInterval;
+        })
+      )
+      .subscribe((s) => console.log(s));
+  }
 }

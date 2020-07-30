@@ -1,5 +1,5 @@
-import * as $ from 'jquery';
 import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
 import { from, Observable, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
@@ -11,11 +11,8 @@ import { filter, map } from 'rxjs/operators';
 export class CreatingObservableComponent implements OnInit {
   constructor() {}
 
-  errHandler = (err) => {
-    console.log(err);
-  };
-
-  complete = () => console.log('complete');
+  onErr = (err) => console.log(err);
+  onComplete = () => console.log('complete');
 
   ngOnInit() {}
 
@@ -35,18 +32,18 @@ export class CreatingObservableComponent implements OnInit {
       };
 
       getNumber();
-    }).subscribe((
-      data: number // onNext
-    ) => console.log('useObsCreate: ', data));
-    this.errHandler; // onErr
-    this.complete; // onComplete
+    }).subscribe(
+      (data: number) => console.log('useObsCreate: ', data),
+      this.onErr,
+      this.onComplete
+    );
   }
 
   useObsFrom() {
     from([2, 5, 9, 12, 22]).subscribe(
-      (data: number) => console.log('from(): ', data), // onNext
-      this.errHandler, // onErr
-      this.complete // onComplete
+      (data: number) => console.log('from(): ', data),
+      this.onErr,
+      this.onComplete
     );
   }
 
@@ -83,7 +80,7 @@ export class CreatingObservableComponent implements OnInit {
   // Use the mock Promise
   usePromiseToObs() {
     const url = 'http://localhost:3000/todos';
-    from($.ajax(url)).subscribe(
+    from(axios(url)).subscribe(
       (data) => console.log('data from jquery', data),
       (err) => console.log('err:', err),
       () => console.log('complete')

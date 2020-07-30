@@ -1,25 +1,28 @@
-import { Component, OnInit } from "@angular/core";
-import { from, interval, Observable, of } from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import { from, interval, Observable, of } from 'rxjs';
 import {
   delay,
+  filter,
+  find,
   map,
+  mergeMap,
   pluck,
   reduce,
   scan,
   take,
   tap,
-  filter,
-  find,
-  mergeMap,
-} from "rxjs/operators";
-import { isArray } from "util";
-import { Voucher } from "../model";
-import { VouchersService } from "../voucher.service";
+  catchError,
+} from 'rxjs/operators';
+import { ajax, AjaxResponse } from 'rxjs/ajax';
+import { isArray } from 'util';
+import { Voucher } from '../model';
+import { VouchersService } from '../voucher.service';
+import { RepositionScrollStrategy } from '@angular/cdk/overlay';
 
 @Component({
-  selector: "app-operators",
-  templateUrl: "./operators.component.html",
-  styleUrls: ["./operators.component.scss"],
+  selector: 'app-operators',
+  templateUrl: './operators.component.html',
+  styleUrls: ['./operators.component.scss'],
 })
 export class OperatorsComponent implements OnInit {
   constructor(private vs: VouchersService) {}
@@ -32,9 +35,8 @@ export class OperatorsComponent implements OnInit {
 
   setLabel = (v) => ({ ...v, Label: `${v.Text} costs € ${v.Amount}` });
 
-  log = (msg: string, data: any) => {
+  log = (msg: string, data: any) =>
     console.log(`executing: ${msg}, 'data' is Array: ${isArray(data)}`, data);
-  };
 
   useMap() {
     this.vouchers$
@@ -46,7 +48,7 @@ export class OperatorsComponent implements OnInit {
           }));
         })
       )
-      .subscribe((data) => this.log("use map()", data));
+      .subscribe((data) => this.log('use map()', data));
   }
 
   useTap() {
@@ -64,17 +66,17 @@ export class OperatorsComponent implements OnInit {
   useMapAndTap() {
     this.vouchers$
       .pipe(
-        tap((data) => console.log("logged using tap() operator: ", data)),
+        tap((data) => console.log('logged using tap() operator: ', data)),
         map((vs) => vs.map(this.setLabel))
       )
-      .subscribe((data) => this.log("use pipe(), map() & tap()", data));
+      .subscribe((data) => this.log('use pipe(), map() & tap()', data));
   }
 
   // JavaScript Array.find
   useFindArr() {
     this.vouchers$
       .pipe(map((v) => v.find((v: Voucher) => v.ID == 3)))
-      .subscribe((data) => this.log("getByID - using find()", data));
+      .subscribe((data) => this.log('getByID - using find()', data));
   }
 
   // RxJs find Operator
@@ -84,14 +86,14 @@ export class OperatorsComponent implements OnInit {
         mergeMap((vouchers: Voucher[]) => vouchers),
         find((v) => v.ID === 3)
       )
-      .subscribe((data) => this.log("getByID - using find()", data));
+      .subscribe((data) => this.log('getByID - using find()', data));
   }
 
   // JavaScript Array.filter
   useFilterArr() {
     this.vouchers$
-      .pipe(map((v) => v.filter((v: Voucher) => v.Paid)))
-      .subscribe((data) => this.log("useFilter", data));
+      .pipe(map((vs) => vs.filter((v: Voucher) => v.Paid)))
+      .subscribe((data) => this.log('useFilter', data));
   }
 
   useFilter() {
@@ -100,12 +102,12 @@ export class OperatorsComponent implements OnInit {
         mergeMap((vouchers: Voucher[]) => vouchers),
         filter((v) => v.Paid)
       )
-      .subscribe((data) => this.log("getByID - using find()", data));
+      .subscribe((data) => this.log('getByID - using find()', data));
   }
 
   // Compare the two outputs
   useTake() {
-    this.vouchers$.pipe(take(3)).subscribe((data) => this.log("useTake", data));
+    this.vouchers$.pipe(take(3)).subscribe((data) => this.log('useTake', data));
   }
 
   useInterval() {
@@ -115,8 +117,8 @@ export class OperatorsComponent implements OnInit {
   }
 
   useDelay() {
-    const fakeObservable = of(["hund", "katze", "maus"]).pipe(delay(5000));
-    console.log("before delay execution - waiting 5 secs");
+    const fakeObservable = of(['hund', 'katze', 'maus']).pipe(delay(5000));
+    console.log('before delay execution - waiting 5 secs');
     fakeObservable.subscribe((data) => console.log(data));
   }
 
@@ -138,10 +140,22 @@ export class OperatorsComponent implements OnInit {
 
   usePluck() {
     const item = of({
-      person: "hugo",
-      children: [{ name: "jimmy" }, { name: "giro" }, { name: "soi" }],
+      person: 'hugo',
+      children: [{ name: 'jimmy' }, { name: 'giro' }, { name: 'soi' }],
     });
 
-    item.pipe(pluck("children")).subscribe(console.log);
+    item.pipe(pluck('children')).subscribe(console.log);
+  }
+
+  useAjax() {
+    const repos$ = ajax(`https://api.github.com/users/arambazamba/repos`).pipe(
+      map((resp) => console.log('repos: ', resp)),
+      catchError((error) => {
+        console.log('error: ', error);
+        return of(error);
+      })
+    );
+
+    repos$.subscribe();
   }
 }

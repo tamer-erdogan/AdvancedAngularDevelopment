@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from '../task.service';
-import { Task } from '../task';
 import { Observable } from 'rxjs';
 import { filter, mergeMap } from 'rxjs/operators';
+import { Task } from '../task';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-async-pipe',
   templateUrl: './async-pipe.component.html',
-  styleUrls: ['./async-pipe.component.scss']
+  styleUrls: ['./async-pipe.component.scss'],
 })
 export class AsyncPipeComponent implements OnInit {
   constructor(private ts: TaskService) {}
@@ -19,7 +19,7 @@ export class AsyncPipeComponent implements OnInit {
   tasks$: Observable<Task[]> = this.ts.getTasks();
   completed$: Observable<Task> = this.tasks$.pipe(
     mergeMap((tasks: Task[]) => tasks),
-    filter(t => t.completed)
+    filter((t) => t.completed)
   );
 
   ngOnInit() {
@@ -27,7 +27,7 @@ export class AsyncPipeComponent implements OnInit {
   }
 
   getDataClassic() {
-    this.ts.getTasks().subscribe(data => {
+    this.ts.getTasks().subscribe((data) => {
       this.tasks = data;
     });
   }
