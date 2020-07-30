@@ -35,3 +35,5 @@ $app-theme: mat-light-theme($primary-palette, $accent-palette, $warn-palette);
 // @include classic-theming-theme($app-theme);
 
 @import "theme/classic-theming.component.theme.scss";
+
+@import "theme/alternative-theming.components.theme.scss";
