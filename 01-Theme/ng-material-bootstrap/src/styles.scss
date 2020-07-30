@@ -1,0 +1,28 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/utilities";
+
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+$primary-palette: mat-palette($mat-indigo);
+$accent-palette: mat-palette($mat-pink, A200, A100, A400);
+$warn-palette: mat-palette($mat-red);
+
+$theme: mat-light-theme(
+  (
+    color: (
+      primary: $primary-palette,
+      accent: $accent-palette,
+      warn: $warn-palette,
+    ),
+  )
+);
+
+@include angular-material-theme($theme);

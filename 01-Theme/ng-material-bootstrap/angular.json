@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-material-bootstrap-demo": {
+    "ng-material-bootstrap": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-material-bootstrap-demo",
+            "outputPath": "dist/ng-material-bootstrap",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-material-bootstrap-demo:build"
+            "browserTarget": "ng-material-bootstrap:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-material-bootstrap-demo:build:production"
+              "browserTarget": "ng-material-bootstrap:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-material-bootstrap-demo:build"
+            "browserTarget": "ng-material-bootstrap:build"
           }
         },
         "test": {
@@ -114,15 +114,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-material-bootstrap-demo:serve"
+            "devServerTarget": "ng-material-bootstrap:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-material-bootstrap-demo:serve:production"
+              "devServerTarget": "ng-material-bootstrap:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "angular-material-bootstrap-demo"
+    }
+  },
+  "defaultProject": "ng-material-bootstrap",
+  "cli": {
+    "analytics": "c6c29352-041c-410f-9d4d-ba0629176609"
+  }
 }
