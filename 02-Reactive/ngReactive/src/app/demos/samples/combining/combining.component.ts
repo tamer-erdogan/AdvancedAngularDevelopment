@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {
   combineLatest,
   forkJoin,
-  from,
   concat,
   merge,
   of,
   zip,
-  interval
+  interval,
 } from 'rxjs';
-import { map, pluck, tap, zip as depzip } from 'rxjs/operators';
+import { map, pluck, tap, take } from 'rxjs/operators';
 import { AccountService } from '../account.service';
 import { DoublerService } from '../operators/doubler.service';
 import { VouchersService } from '../voucher.service';
@@ -17,7 +16,7 @@ import { VouchersService } from '../voucher.service';
 @Component({
   selector: 'app-combining',
   templateUrl: './combining.component.html',
-  styleUrls: ['./combining.component.scss']
+  styleUrls: ['./combining.component.scss'],
 })
 export class CombiningComponent implements OnInit {
   constructor(
@@ -29,20 +28,32 @@ export class CombiningComponent implements OnInit {
   ngOnInit(): void {}
 
   useConcat() {
-    // TODO: replace depzip
-    // const nbrs$ = from([1, 2, 3, 4, 5]);
-    // const letter$ = from(['a', 'b', 'c']);
-
-    const sourceA$ = from([1, 2, 3, 4, 5]).pipe(depzip(interval(500), a => a));
-    const sourceB$ = from(['a', 'b', 'c']).pipe(depzip(interval(400), a => a));
+    const arrA = [1, 2, 3, 4, 5];
+    const sourceA$ = interval(500).pipe(
+      take(arrA.length),
+      map((i) => arrA[i])
+    );
+    const arrB = ['a', 'b', 'c'];
+    const sourceB$ = interval(300).pipe(
+      take(arrB.length),
+      map((i) => arrB[i])
+    );
 
     console.log('concat');
     concat(sourceA$, sourceB$).subscribe(console.log);
   }
 
   useMerge() {
-    const sourceA$ = from([1, 2, 3, 4, 5]).pipe(depzip(interval(500), a => a));
-    const sourceB$ = from(['a', 'b', 'c']).pipe(depzip(interval(400), a => a));
+    const arrA = [1, 2, 3, 4, 5];
+    const sourceA$ = interval(500).pipe(
+      take(arrA.length),
+      map((i) => arrA[i])
+    );
+    const arrB = ['a', 'b', 'c'];
+    const sourceB$ = interval(300).pipe(
+      take(arrB.length),
+      map((i) => arrB[i])
+    );
 
     console.log('merge');
     merge(sourceA$, sourceB$).subscribe(console.log);
@@ -55,7 +66,7 @@ export class CombiningComponent implements OnInit {
 
     zip(age$, name$, isDev$)
       .pipe(map(([age, name, isDev]) => ({ age, name, isDev })))
-      .subscribe(x => console.log(x));
+      .subscribe((x) => console.log(x));
   }
 
   useForkJoin() {
@@ -63,7 +74,7 @@ export class CombiningComponent implements OnInit {
     const response2 = this.ds.double(9);
     const response3 = this.ds.double(2);
 
-    forkJoin([response1, response2, response3]).subscribe(arr => {
+    forkJoin([response1, response2, response3]).subscribe((arr) => {
       console.log('forkJoin', arr);
     });
   }
@@ -72,7 +83,7 @@ export class CombiningComponent implements OnInit {
     // get only the details for the vouchers
     const details$ = this.vs.getVoucher(2).pipe(
       pluck('Details'),
-      tap(d => console.log('Details before combining', d))
+      tap((d) => console.log('Details before combining', d))
     );
 
     const accounts$ = this.as.getAccounts();
@@ -80,12 +91,12 @@ export class CombiningComponent implements OnInit {
     combineLatest([details$, accounts$])
       .pipe(
         map(([details, accounts]) =>
-          details.map(d => ({
+          details.map((d) => ({
             ...d,
-            Account: accounts.find(a => d.AccountID === a.ID).Name
+            Account: accounts.find((a) => d.AccountID === a.ID).Name,
           }))
         )
       )
-      .subscribe(d => console.log('Details after combining', d));
+      .subscribe((d) => console.log('Details after combining', d));
   }
 }
