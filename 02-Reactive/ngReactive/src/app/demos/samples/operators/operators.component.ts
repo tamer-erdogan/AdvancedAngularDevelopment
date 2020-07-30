@@ -11,10 +11,13 @@ import {
   scan,
   take,
   tap,
+  catchError,
 } from 'rxjs/operators';
+import { ajax, AjaxResponse } from 'rxjs/ajax';
 import { isArray } from 'util';
 import { Voucher } from '../model';
 import { VouchersService } from '../voucher.service';
+import { RepositionScrollStrategy } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-operators',
@@ -142,5 +145,17 @@ export class OperatorsComponent implements OnInit {
     });
 
     item.pipe(pluck('children')).subscribe(console.log);
+  }
+
+  useAjax() {
+    const repos$ = ajax(`https://api.github.com/users/arambazamba/repos`).pipe(
+      map((resp) => console.log('repos: ', resp)),
+      catchError((error) => {
+        console.log('error: ', error);
+        return of(error);
+      })
+    );
+
+    repos$.subscribe();
   }
 }

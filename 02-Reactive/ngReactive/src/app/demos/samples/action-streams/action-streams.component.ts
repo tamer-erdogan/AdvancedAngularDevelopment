@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { DemoService } from '../../demo.service';
-import { Observable, BehaviorSubject, combineLatest } from 'rxjs';
-import { DemoItem } from '../../../model/demo/DemoItem';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { DemoItem } from '../../../model/demo/DemoItem';
+import { DemoService } from '../../demo.service';
 
 @Component({
   selector: 'app-action-streams',
   templateUrl: './action-streams.component.html',
-  styleUrls: ['./action-streams.component.scss']
+  styleUrls: ['./action-streams.component.scss'],
 })
 export class ActionStreamsComponent implements OnInit {
   constructor(private ds: DemoService) {}
@@ -25,7 +25,7 @@ export class ActionStreamsComponent implements OnInit {
   demos$ = combineLatest([this.demosData$, this.filter$]).pipe(
     map(([demos, filter]) => {
       return filter != ''
-        ? demos.filter(d =>
+        ? demos.filter((d) =>
             d.title.toLowerCase().includes(filter.toLowerCase())
           )
         : demos;

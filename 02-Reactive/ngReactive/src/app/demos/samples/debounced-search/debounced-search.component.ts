@@ -1,11 +1,17 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-debounced-search',
   templateUrl: './debounced-search.component.html',
-  styleUrls: ['./debounced-search.component.scss']
+  styleUrls: ['./debounced-search.component.scss'],
 })
 export class DebouncedSearchComponent implements OnInit, AfterViewInit {
   constructor() {}
@@ -27,7 +33,7 @@ export class DebouncedSearchComponent implements OnInit, AfterViewInit {
           return (kEvt.srcElement as HTMLInputElement).value;
         })
       )
-      .subscribe(val => {
+      .subscribe((val) => {
         console.log('Currently your searching debounced for:', val);
       });
   }

@@ -6,7 +6,7 @@ import { SubSink } from 'subsink';
 @Component({
   selector: 'app-mouse-dom-observables',
   templateUrl: './mouse-dom-observables.component.html',
-  styleUrls: ['./mouse-dom-observables.component.scss']
+  styleUrls: ['./mouse-dom-observables.component.scss'],
 })
 export class MouseDomObservablesComponent implements AfterViewInit {
   @ViewChild('signPad') signPad: ElementRef;
@@ -40,7 +40,7 @@ export class MouseDomObservablesComponent implements AfterViewInit {
     // this will capture all mousedown events from the canvas element
 
     const mouse$ = fromEvent(canvasEl, 'mousedown').pipe(
-      switchMap(e => {
+      switchMap((e) => {
         // after a mouse down, we'll record all mouse moves
         return fromEvent(canvasEl, 'mousemove').pipe(
           // stop once the user releases the mouse
@@ -63,12 +63,12 @@ export class MouseDomObservablesComponent implements AfterViewInit {
       // previous and current position with the offset
       const prevPos = {
         x: res[0].clientX - rectangle.left,
-        y: res[0].clientY - rectangle.top
+        y: res[0].clientY - rectangle.top,
       };
 
       const currentPos = {
         x: res[1].clientX - rectangle.left,
-        y: res[1].clientY - rectangle.top
+        y: res[1].clientY - rectangle.top,
       };
 
       // do the actual drawing

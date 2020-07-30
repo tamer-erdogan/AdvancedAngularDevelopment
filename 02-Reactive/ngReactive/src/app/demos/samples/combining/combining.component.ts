@@ -28,6 +28,7 @@ export class CombiningComponent implements OnInit {
   ngOnInit(): void {}
 
   useConcat() {
+    // Create a time that emmits a value from array evey x milliseconds
     const arrA = [1, 2, 3, 4, 5];
     const sourceA$ = interval(500).pipe(
       take(arrA.length),
