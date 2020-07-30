@@ -6,6 +6,8 @@
 
 [Angular Debug Statements](https://angular.io/api/core/global)
 
+[Airbnb Style Guide](https://github.com/webdev-tools/tslint-airbnb-styleguide)
+
 ## Analyzing Bundles
 
 [Performance Budget Calculator](https://perf-budget-calculator.firebaseapp.com/)
