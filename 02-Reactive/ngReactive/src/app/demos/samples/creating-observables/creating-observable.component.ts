@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
 import { from, Observable, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import axios from 'axios';
 
 @Component({
   selector: 'app-simple-observable',

@@ -1,14 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
+import { Subscription } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { SubSink } from 'subsink';
-import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-flex-layout-api',
   templateUrl: './flex-layout-api.component.html',
-  styleUrls: ['./flex-layout-api.component.scss']
+  styleUrls: ['./flex-layout-api.component.scss'],
 })
 export class FlexLayoutApiComponent implements OnInit, OnDestroy {
   constructor(private obsMedia: MediaObserver) {}
@@ -31,27 +31,29 @@ export class FlexLayoutApiComponent implements OnInit, OnDestroy {
   }
 
   subscribeScreen() {
-    this.sub.sink = this.obsMedia.asObservable()
-    .pipe(
-      filter((changes: MediaChange[]) => changes.length > 0),
-      map((changes: MediaChange[]) => changes[0])
-    ).subscribe((change: MediaChange) => {
-      this.mq = change.mqAlias;
-      switch (change.mqAlias) {
-        case 'xs':
-          this.isPhone = true;
-          this.isTablet = false;
-          break;
-        case 'sm':
-          this.isPhone = false;
-          this.isTablet = true;
-          break;
-        default:
-          this.isPhone = false;
-          this.isTablet = false;
-          break;
-      }
-    });
+    this.sub.sink = this.obsMedia
+      .asObservable()
+      .pipe(
+        filter((changes: MediaChange[]) => changes.length > 0),
+        map((changes: MediaChange[]) => changes[0])
+      )
+      .subscribe((change: MediaChange) => {
+        this.mq = change.mqAlias;
+        switch (change.mqAlias) {
+          case 'xs':
+            this.isPhone = true;
+            this.isTablet = false;
+            break;
+          case 'sm':
+            this.isPhone = false;
+            this.isTablet = true;
+            break;
+          default:
+            this.isPhone = false;
+            this.isTablet = false;
+            break;
+        }
+      });
   }
 
   getClass() {

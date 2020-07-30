@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngDemoApp": {
+    "ngdemoapp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -36,30 +36,31 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngDemoApp",
+            "outputPath": "dist/ngdemoapp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
               "node_modules/prismjs/themes/prism-okaidia.css"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/theme"
-              ]
+              "includePaths": ["src/theme"]
             },
             "scripts": [
               "node_modules/marked/lib/marked.js",
               "node_modules/prismjs/prism.js",
               "node_modules/prismjs/components/prism-typescript.min.js",
               "node_modules/prismjs/components/prism-css.min.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "util",
+              "subsink",
+              "axios"
             ]
           },
           "configurations": {
@@ -95,21 +96,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngDemoApp:build",
+            "browserTarget": "ngdemoapp:build",
             "ssl": false,
             "sslKey": "/ssl/server.key",
             "sslCert": "/ssl/server.crt"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngDemoApp:build:production"
+              "browserTarget": "ngdemoapp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngDemoApp:build"
+            "browserTarget": "ngdemoapp:build"
           }
         },
         "test": {
@@ -119,13 +120,8 @@
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
@@ -137,27 +133,25 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngDemoApp:serve"
+            "devServerTarget": "ngdemoapp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngDemoApp:serve:production"
+              "devServerTarget": "ngdemoapp:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ngDemoApp",
+  "defaultProject": "ngdemoapp",
   "cli": {
     "analytics": "637494c2-de35-4c8a-a112-3acc3f3298de"
   }

@@ -3,7 +3,7 @@ import {
   ElementRef,
   OnDestroy,
   OnInit,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { SubSink } from 'subsink';
@@ -11,7 +11,7 @@ import { SubSink } from 'subsink';
 @Component({
   selector: 'app-subsink',
   templateUrl: './subsink.component.html',
-  styleUrls: ['./subsink.component.scss']
+  styleUrls: ['./subsink.component.scss'],
 })
 export class SubsinkComponent implements OnInit, OnDestroy {
   @ViewChild('searchBox', { static: true }) searchBox: ElementRef;
