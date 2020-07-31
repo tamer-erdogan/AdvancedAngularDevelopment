@@ -1,6 +1,14 @@
 {
   "demos": [
     {
+      "url": "formcontrol",
+      "topicid": 3,
+      "title": "FormControl",
+      "component": "FormControlComponent",
+      "visible": true,
+      "sortOrder": 3
+    },
+    {
       "url": "reactiveforms",
       "topicid": 2,
       "title": "Reactive Forms",
@@ -15,14 +23,6 @@
       "component": "FormsBuilderComponent",
       "visible": true,
       "sortOrder": 2
-    },
-    {
-      "url": "formcontrol",
-      "topicid": 3,
-      "title": "FormControl",
-      "component": "FormControlComponent",
-      "visible": true,
-      "sortOrder": 3
     },
     {
       "url": "async-pipe",
