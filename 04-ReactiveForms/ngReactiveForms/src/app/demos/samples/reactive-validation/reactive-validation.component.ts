@@ -9,7 +9,7 @@ import {
 import { emptyPerson, wealthOpts } from '../empty-person';
 import { Person } from '../person.model';
 import { PersonService } from '../person.service';
-import { asyncMailExistsValidator } from './asyncMailExistsValidator';
+import { AsyncMailExistsValidator } from './asyncMailExistsValidator';
 
 @Component({
   selector: 'app-reactive-validation',
@@ -25,7 +25,7 @@ export class ReactiveValidationComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private ps: PersonService,
-    private mailExistsValidator: asyncMailExistsValidator
+    private mailExistsValidator: AsyncMailExistsValidator
   ) {}
 
   ngOnInit() {
@@ -78,7 +78,7 @@ export class ReactiveValidationComponent implements OnInit {
 
   violatesMinLenght() {
     let result = false;
-    let errs: ValidationErrors = this.personForm.controls.name.errors;
+    const errs: ValidationErrors = this.personForm.controls.name.errors;
 
     if (errs != null) {
       console.log('Errors in Name field: ', errs);
