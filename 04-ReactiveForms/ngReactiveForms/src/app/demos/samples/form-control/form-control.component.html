@@ -7,6 +7,9 @@
     <div fxLayout="row" fxLayout.lt-md="column" fxFlexFill>
       <mat-form-field fxFlex="1 1 auto">
         <input matInput type="text" placeholder="Name" [formControl]="name" />
+        <mat-error *ngIf="!name.valid">
+          Name is required
+        </mat-error>
       </mat-form-field>
       <mat-form-field fxFlex="1 1 auto">
         <input matInput type="text" placeholder="Plz" [formControl]="postal" />
@@ -20,6 +23,7 @@
     </div>
   </mat-card-content>
   <mat-card-actions align="end">
+    <button mat-button (click)="updateName()">Update Name</button>
     <button mat-button>Save</button>
   </mat-card-actions>
 </mat-card>
