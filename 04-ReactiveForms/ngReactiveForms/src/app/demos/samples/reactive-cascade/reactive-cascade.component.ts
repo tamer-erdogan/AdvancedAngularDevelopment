@@ -1,31 +1,31 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
   FormArray,
-  AbstractControl
-} from "@angular/forms";
+  AbstractControl,
+} from '@angular/forms';
 
 @Component({
-  selector: "app-reactive-cascade",
-  templateUrl: "./reactive-cascade.component.html",
-  styleUrls: ["./reactive-cascade.component.scss"]
+  selector: 'app-reactive-cascade',
+  templateUrl: './reactive-cascade.component.html',
+  styleUrls: ['./reactive-cascade.component.scss'],
 })
 export class ReactiveCascadeComponent {
   constructor(private fb: FormBuilder) {
     this.profileForm = this.fb.group({
-      firstNameInput: [""],
-      lastNameInput: [""],
+      firstNameInput: [''],
+      lastNameInput: [''],
       optionGroups: this.fb.array([
         this.fb.group({
-          typename: [""],
-          skill: [""]
+          typename: [''],
+          skill: [''],
         }),
         this.fb.group({
-          typename: [""],
-          skill: [""]
-        })
-      ])
+          typename: [''],
+          skill: [''],
+        }),
+      ]),
     });
 
     this.selects = [];
@@ -34,14 +34,14 @@ export class ReactiveCascadeComponent {
   public profileForm: FormGroup;
 
   readonly selectValues = [
-    { type: "Framework", values: ["Angular", "React", "Vue.js"] },
-    { type: "Cloud", values: ["Azure", "Google Cloud", "Sorry - No Amazon"] }
+    { type: 'Framework', values: ['Angular', 'React', 'Vue.js'] },
+    { type: 'Cloud', values: ['Azure', 'Google Cloud', 'Sorry - No Amazon'] },
   ];
 
   selects: string[];
 
   public getOptionGroupControls(): AbstractControl[] {
-    return (this.profileForm.controls["optionGroups"] as FormArray).controls;
+    return (this.profileForm.controls['optionGroups'] as FormArray).controls;
   }
 
   public saveProfileForm() {
@@ -49,7 +49,7 @@ export class ReactiveCascadeComponent {
   }
 
   getValuesForType(type) {
-    const select = this.selectValues.find(_ => _.type == type);
+    const select = this.selectValues.find((_) => _.type == type);
     return select ? select.values : select;
   }
 }

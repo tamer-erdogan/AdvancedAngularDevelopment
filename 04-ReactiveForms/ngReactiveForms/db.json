@@ -22,7 +22,7 @@
       "title": "FormControl",
       "component": "FormControlComponent",
       "visible": true,
-      "sortOrder": 2
+      "sortOrder": 3
     },
     {
       "url": "validation",
@@ -30,7 +30,7 @@
       "title": "Custom Validators",
       "component": "SubjectsComponent",
       "visible": true,
-      "sortOrder": "sdf"
+      "sortOrder": 4
     },
     {
       "url": "formarray",
@@ -38,25 +38,36 @@
       "title": "FormArray",
       "component": "FormArrayComponent",
       "visible": true,
-      "sortOrder": 2
+      "sortOrder": 5
     },
     {
-      "url": "cascading",
+      "url": "cascade",
       "topicid": 3,
       "title": "Cascading",
-      "component": "UnsubscribingComponent",
-      "visible": true
-    },
-    {
-      "url": "dynamic-forms",
-      "title": "Dynamic Forms",
-      "component": "SubsinkComponent",
-      "visible": true
+      "component": "ReactiveCascadeComponent",
+      "visible": true,
+      "sortOrder": 5
     },
     {
       "url": "ngrx",
       "title": "ngrx",
-      "component": "FlexLayoutApiComponent"
+      "component": "NgrxComponent",
+      "visible": true,
+      "sortOrder": 5
+    },
+    {
+      "url": "dynamic-manual",
+      "title": "Dynamic Forms",
+      "component": "DynamicManualComponent",
+      "visible": true,
+      "sortOrder": 5
+    },
+    {
+      "url": "ngx-formly",
+      "title": "ngx-formly",
+      "component": "NgxFormlyComponent",
+      "visible": true,
+      "sortOrder": 5
     }
   ],
   "skills": [

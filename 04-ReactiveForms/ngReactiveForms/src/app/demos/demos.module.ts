@@ -14,6 +14,10 @@ import { FormsBuilderComponent } from './samples/forms-builder/forms-builder.com
 import { FormControlComponent } from './samples/form-control/form-control.component';
 import { FormArrayComponent } from './samples/form-array/form-array.component';
 import { ReactiveValidationComponent } from './samples/reactive-validation/reactive-validation.component';
+import { ReactiveCascadeComponent } from './samples/reactive-cascade/reactive-cascade.component';
+import { NgrxComponent } from './samples/ngrx/ngrx.component';
+import { DynamicManualComponent } from './samples/dynamic-manual/dynamic-manual.component';
+import { NgxFormlyComponent } from './samples/ngx-formly/ngx-formly.component';
 
 const demoRoutes: Routes = [
   {
@@ -26,6 +30,10 @@ const demoRoutes: Routes = [
       { path: 'formcontrol', component: FormControlComponent },
       { path: 'formarray', component: FormArrayComponent },
       { path: 'validation', component: ReactiveValidationComponent },
+      { path: 'cascade', component: ReactiveCascadeComponent },
+      { path: 'ngrx', component: NgrxComponent },
+      { path: 'ngx-formly', component: NgrxComponent },
+      { path: 'dynamic-manual', component: NgxFormlyComponent },
     ],
   },
 ];
@@ -39,6 +47,10 @@ const demoRoutes: Routes = [
     FormControlComponent,
     FormArrayComponent,
     ReactiveValidationComponent,
+    ReactiveCascadeComponent,
+    NgrxComponent,
+    DynamicManualComponent,
+    NgxFormlyComponent,
   ],
   imports: [
     CommonModule,
