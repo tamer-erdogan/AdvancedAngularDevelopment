@@ -33,4 +33,8 @@ export class FormArrayComponent implements OnInit {
   saveForm() {
     console.log('saving ...', this.skillForm.value);
   }
+
+  getElementsInFormArray() {
+    return (this.skillForm.controls['skillsGrp'] as FormArray).controls;
+  }
 }

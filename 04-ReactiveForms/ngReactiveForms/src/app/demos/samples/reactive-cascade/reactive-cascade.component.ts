@@ -11,7 +11,16 @@ import {
   templateUrl: './reactive-cascade.component.html',
   styleUrls: ['./reactive-cascade.component.scss'],
 })
-export class ReactiveCascadeComponent {
+export class ReactiveCascadeComponent implements OnInit {
+  public profileForm: FormGroup;
+
+  readonly selectValues = [
+    { type: 'Framework', values: ['Angular', 'React', 'Vue.js'] },
+    { type: 'Cloud', values: ['Azure', 'Google Cloud', 'Sorry - No Amazon'] },
+  ];
+
+  selects: string[];
+
   constructor(private fb: FormBuilder) {
     this.profileForm = this.fb.group({
       firstNameInput: [''],
@@ -31,14 +40,9 @@ export class ReactiveCascadeComponent {
     this.selects = [];
   }
 
-  public profileForm: FormGroup;
-
-  readonly selectValues = [
-    { type: 'Framework', values: ['Angular', 'React', 'Vue.js'] },
-    { type: 'Cloud', values: ['Azure', 'Google Cloud', 'Sorry - No Amazon'] },
-  ];
-
-  selects: string[];
+  ngOnInit(): void {
+    // this.getOptionGroupControls();
+  }
 
   public getOptionGroupControls(): AbstractControl[] {
     return (this.profileForm.controls['optionGroups'] as FormArray).controls;
