@@ -17,12 +17,28 @@
       "sortOrder": 2
     },
     {
-      "url": "custom-vaildators",
-      "topicid": 2,
+      "url": "formcontrol",
+      "topicid": 3,
+      "title": "FormControl",
+      "component": "FormControlComponent",
+      "visible": true,
+      "sortOrder": 2
+    },
+    {
+      "url": "validation",
+      "topicid": 4,
       "title": "Custom Validators",
       "component": "SubjectsComponent",
       "visible": true,
       "sortOrder": "sdf"
+    },
+    {
+      "url": "formarray",
+      "topicid": 4,
+      "title": "FormArray",
+      "component": "FormArrayComponent",
+      "visible": true,
+      "sortOrder": 2
     },
     {
       "url": "cascading",

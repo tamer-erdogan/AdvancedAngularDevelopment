@@ -11,6 +11,9 @@ import { MarkdownEditorComponent } from './markdown-editor/markdown-editor.compo
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsComponent } from './samples/reactive-forms/reactive-forms.component';
 import { FormsBuilderComponent } from './samples/forms-builder/forms-builder.component';
+import { FormControlComponent } from './samples/form-control/form-control.component';
+import { FormArrayComponent } from './samples/form-array/form-array.component';
+import { ReactiveValidationComponent } from './samples/reactive-validation/reactive-validation.component';
 
 const demoRoutes: Routes = [
   {
@@ -20,6 +23,9 @@ const demoRoutes: Routes = [
     children: [
       { path: 'reactiveforms', component: ReactiveFormsComponent },
       { path: 'formbuilder', component: FormsBuilderComponent },
+      { path: 'formcontrol', component: FormControlComponent },
+      { path: 'formarray', component: FormArrayComponent },
+      { path: 'validation', component: ReactiveValidationComponent },
     ],
   },
 ];
@@ -30,6 +36,9 @@ const demoRoutes: Routes = [
     MarkdownEditorComponent,
     ReactiveFormsComponent,
     FormsBuilderComponent,
+    FormControlComponent,
+    FormArrayComponent,
+    ReactiveValidationComponent,
   ],
   imports: [
     CommonModule,
