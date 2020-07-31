@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { of, Observable } from 'rxjs';
+import { Person } from './person.model';
 import { delay } from 'rxjs/operators';
-import { Person } from './person';
+import { NgForm } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -9,20 +10,24 @@ import { Person } from './person';
 export class PersonService {
   constructor() {}
 
-  data: Person[] = [
-    {
-      id: 1,
-      name: 'Alexander',
-      age: 50,
+  getPerson(): Observable<Person> {
+    return of({
+      name: 'Heinz',
       gender: 'male',
-      married: true,
-      imgUrl: '/assets/images/alex.jpg',
-    },
-    { id: 2, name: 'Brunhilde', age: 27, gender: 'female', married: false },
-    { id: 3, name: 'Susi', age: 37, gender: 'female', married: false },
-  ];
+      age: 20,
+      email: 'derschoeneheinz@xyz.at',
+      wealth: 'poor',
+    }).pipe(delay(1500));
+  }
 
-  getPersons(): Observable<Person[]> {
-    return of(this.data).pipe(delay(1000));
+  save(result: NgForm) {
+    console.log('ngForm:', result);
+    console.log('value:', result.value);
+  }
+
+  checkMailExists(email: string): Observable<boolean> {
+    //Mocking Http Call to service to check weather user exists
+    const exists = email === 'alexander.pajer@integrations.at';
+    return of(exists).pipe(delay(500));
   }
 }

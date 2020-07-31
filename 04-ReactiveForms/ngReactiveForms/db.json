@@ -1,18 +1,18 @@
 {
   "demos": [
     {
-      "url": "templateforms",
+      "url": "reactiveforms",
       "topicid": 2,
-      "title": "Template Forms",
-      "component": "BindingComponent",
+      "title": "Reactive Forms",
+      "component": "ReactiveFormsComponent",
       "visible": true,
       "sortOrder": 1
     },
     {
-      "url": "reactiveforms",
+      "url": "formbuilder",
       "topicid": 2,
-      "title": "Reactive Forms",
-      "component": "CreatingObservableComponent",
+      "title": "Form Builder",
+      "component": "FormsBuilderComponent",
       "visible": true,
       "sortOrder": 2
     },

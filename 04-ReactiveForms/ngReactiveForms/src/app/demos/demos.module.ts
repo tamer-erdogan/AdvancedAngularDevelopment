@@ -9,14 +9,18 @@ import { UxModule } from '../ux/ux.module';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { MarkdownEditorComponent } from './markdown-editor/markdown-editor.component';
 import { SharedModule } from '../shared/shared.module';
-import { BindingComponent } from './samples/binding/binding.component';
+import { ReactiveFormsComponent } from './samples/reactive-forms/reactive-forms.component';
+import { FormsBuilderComponent } from './samples/forms-builder/forms-builder.component';
 
 const demoRoutes: Routes = [
   {
     path: '',
     component: DemoContainerComponent,
 
-    children: [{ path: 'templateforms', component: BindingComponent }],
+    children: [
+      { path: 'reactiveforms', component: ReactiveFormsComponent },
+      { path: 'formbuilder', component: FormsBuilderComponent },
+    ],
   },
 ];
 
@@ -24,7 +28,8 @@ const demoRoutes: Routes = [
   declarations: [
     DemoContainerComponent,
     MarkdownEditorComponent,
-    BindingComponent,
+    ReactiveFormsComponent,
+    FormsBuilderComponent,
   ],
   imports: [
     CommonModule,
