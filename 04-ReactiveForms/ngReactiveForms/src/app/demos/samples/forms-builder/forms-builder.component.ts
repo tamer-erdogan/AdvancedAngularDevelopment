@@ -19,6 +19,7 @@ export class FormsBuilderComponent implements OnInit {
 
   ngOnInit() {
     this.ps.getPerson().subscribe((p) => {
+      //Use this to update the whole form
       this.personForm.setValue(p);
       console.log('Data loaded from service', p);
     });

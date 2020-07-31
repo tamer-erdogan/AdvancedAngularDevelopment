@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-control',
@@ -8,10 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class FormControlComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {
-    //
-    // this.form.valueChanges.subscribe(data => console.log('Form values changed', data));
-    // this.form.statusChanges.subscribe(data => console.log('Form status changed', data));
-    // this.form.errors.subscribe(data => console.log('Form errors:', data));
-  }
+  postal = new FormControl('3544');
+  city = new FormControl('Idolsberg', [Validators.maxLength(15)]);
+
+  ngOnInit() {}
 }

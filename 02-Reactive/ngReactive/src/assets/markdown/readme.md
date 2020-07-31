@@ -6,12 +6,12 @@
 - Understanding & Implementing Marble Diagrams
 - Debugging & Visualizing Observables
 - Using Declarative Approach - Async Pipe
-- Error Handling Pattern
+- Implementing Error Handling
 - Data- vs Action-Streams
 - Higher Order Mapping Operators
 - Data Composition - Joining Observable Streams
 - Data Caching & Invalidation
-- Implementing Custom Operators
+- Implementing Custom Observable Operators
 
 ## Links
 

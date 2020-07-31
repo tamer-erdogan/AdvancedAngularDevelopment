@@ -18,6 +18,7 @@ import { ReactiveCascadeComponent } from './samples/reactive-cascade/reactive-ca
 import { NgrxComponent } from './samples/ngrx/ngrx.component';
 import { DynamicManualComponent } from './samples/dynamic-manual/dynamic-manual.component';
 import { NgxFormlyComponent } from './samples/ngx-formly/ngx-formly.component';
+import { AsyncPipeComponent } from './samples/async-pipe/async-pipe.component';
 
 const demoRoutes: Routes = [
   {
@@ -28,6 +29,7 @@ const demoRoutes: Routes = [
       { path: 'reactiveforms', component: ReactiveFormsComponent },
       { path: 'formbuilder', component: FormsBuilderComponent },
       { path: 'formcontrol', component: FormControlComponent },
+      { path: 'async-pipe', component: AsyncPipeComponent },
       { path: 'formarray', component: FormArrayComponent },
       { path: 'validation', component: ReactiveValidationComponent },
       { path: 'cascade', component: ReactiveCascadeComponent },
@@ -51,6 +53,7 @@ const demoRoutes: Routes = [
     NgrxComponent,
     DynamicManualComponent,
     NgxFormlyComponent,
+    AsyncPipeComponent,
   ],
   imports: [
     CommonModule,

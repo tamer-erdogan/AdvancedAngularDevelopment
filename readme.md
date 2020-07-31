@@ -1,6 +1,6 @@
 # Advanced Angular Development
 
-Im Seminar "Advanced Angular Development" bringen wir Ihre Angular Kenntnisse auf den Experten Level. Großes Augenmerk legen wir dabei auf State Management mit NgRX, Advanced Routing, Testing & Security, Optimierung und vor allem auch die Darstellung des Angular Developments Prozesses in Bezug auf DevOps, Cloud & Container
+Im Seminar "Advanced Angular Development" bringen wir Ihre Angular Kenntnisse auf den Experten Level. Großes Augenmerk legen wir dabei auf Reactive Programming & State Management mit NgRX, Advanced Routing, Testing & Security, Optimierung und vor allem auch die Darstellung des Angular Developments Prozesses in Bezug auf DevOps, Cloud & Container
 
 ## Themen
 
@@ -77,7 +77,7 @@ Kenntnisse im Umgang mit Git
 - Higher Order Mapping Operators
 - Data Composition - Joining Observable Streams
 - Data Caching & Invalidation
-- Implementing Custom Operators
+- Implementing Custom Observable Operators
 
 ## Advanced State Management using NgRx
 
@@ -101,8 +101,7 @@ Kenntnisse im Umgang mit Git
 - Advanced Angular Debugging using @angular/core/global
 - Analyzing and Optimizing Bundles & Modules
 - Code-Splitting and Module Pre-Loading
-- Understaning Angular Change Detection
-- Optimize Change Detection using @ngrx/component & ngrxPush
+- Understaning & Optimizing Angular Change Detection
 
 ## Understanding & using Ivy
 
@@ -116,8 +115,8 @@ Kenntnisse im Umgang mit Git
 - Recap Reactive Forms Revisited (FormControl, Forms Array, Form Builder)
 - Implementing Custom Validatiors
 - Cascading Form Controls
-- Dynamic Form Generation & Validation
-- Using Obervables & NgRx in Reactive Forms
+- Dynamic Form Generation & Validation (Manual & ngx-formly)
+- Optimize Change Detection using @ngrx/component & ngrxPush in Reactive Forms
 
 ## Routing & Securing Angular using NgRx
 
@@ -125,6 +124,7 @@ Kenntnisse im Umgang mit Git
 - Router State & Custom Serialization
 - Route Guards & Interceptors with NgRx
 - Using multible Interceptors
+- Routing & App Initialization
 - Recap Jwt, OAuth 2.0 & OpenID Connect
 - Cloud based Logins: Azure AD
 - Using Social & Cloud Logins: MSAL, Google, Facebook ...
@@ -137,8 +137,8 @@ Kenntnisse im Umgang mit Git
 - Using Testbed & Spies
 - Shallow / Deep Integration Tests
 - Async Testing
-- Testing NgRx: Mock Store, Mock Selectors, ...
 - Using Jest for Unit Testing
+- Testing NgRx: Mock Store, Mock Selectors, Reducers, ...
 - End-2-End Testing using Cypress
 - Integrate Angular Testing in DevOps Pipelines
 
@@ -155,7 +155,7 @@ Kenntnisse im Umgang mit Git
 - Angular Building Blocks: Workspace, Apps, Libraries
 - Sharing Code between Projects using Angular Libraries
 - Implementing, Using & Publishing Libraries
-- Using Monorepos
+- Understanding & using Monorepos
 - Introduction to nrwl NX
 
 ## Web Components using Angular Elements & Dynamic Components

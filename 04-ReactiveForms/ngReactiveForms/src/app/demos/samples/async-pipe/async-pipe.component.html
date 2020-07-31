@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Using async pipe
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngFor="let t of tasks$ | async">{{ t.id }} - {{ t.title }}</div>
+  </mat-card-content>
+</mat-card>
