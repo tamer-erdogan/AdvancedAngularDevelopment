@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  FormArray,
-  AbstractControl,
-} from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-cascade',
@@ -12,14 +7,13 @@ import {
   styleUrls: ['./reactive-cascade.component.scss'],
 })
 export class ReactiveCascadeComponent implements OnInit {
-  public profileForm: FormGroup;
-
   readonly selectValues = [
-    { type: 'Framework', values: ['Angular', 'React', 'Vue.js'] },
-    { type: 'Cloud', values: ['Azure', 'Google Cloud', 'Sorry - No Amazon'] },
+    { type: 'Frameworks', values: ['Angular', 'React', '.NET Core'] },
+    { type: 'Languages', values: ['TypeScript', 'JavaScript', 'C#', 'Java'] },
   ];
 
   selects: string[];
+  profileForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.profileForm = this.fb.group({
@@ -27,12 +21,12 @@ export class ReactiveCascadeComponent implements OnInit {
       lastNameInput: [''],
       optionGroups: this.fb.array([
         this.fb.group({
-          typename: [''],
-          skill: [''],
+          selectInput: [''],
+          whereInput: [''],
         }),
         this.fb.group({
-          typename: [''],
-          skill: [''],
+          selectInput: [''],
+          whereInput: [''],
         }),
       ]),
     });
@@ -40,20 +34,18 @@ export class ReactiveCascadeComponent implements OnInit {
     this.selects = [];
   }
 
-  ngOnInit(): void {
-    // this.getOptionGroupControls();
-  }
+  ngOnInit(): void {}
 
-  public getOptionGroupControls(): AbstractControl[] {
-    return (this.profileForm.controls['optionGroups'] as FormArray).controls;
-  }
-
-  public saveProfileForm() {
+  saveProfileForm() {
     console.log(this.profileForm.value);
   }
 
-  getValuesForType(type) {
+  getCriteria(type) {
     const select = this.selectValues.find((_) => _.type == type);
     return select ? select.values : select;
+  }
+
+  getOptionGroups() {
+    return (this.profileForm.controls['optionGroups'] as FormArray).controls;
   }
 }
