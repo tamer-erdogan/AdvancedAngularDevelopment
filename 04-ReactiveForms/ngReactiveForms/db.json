@@ -57,20 +57,6 @@
       "sortOrder": 5
     },
     {
-      "url": "ngrx",
-      "title": "ngrx",
-      "component": "NgrxComponent",
-      "visible": true,
-      "sortOrder": 5
-    },
-    {
-      "url": "dynamic-manual",
-      "title": "Dynamic Forms",
-      "component": "DynamicManualComponent",
-      "visible": true,
-      "sortOrder": 5
-    },
-    {
       "url": "ngx-formly",
       "title": "ngx-formly",
       "component": "NgxFormlyComponent",

@@ -102,6 +102,7 @@ Kenntnisse im Umgang mit Git
 - Analyzing and Optimizing Bundles & Modules
 - Code-Splitting and Module Pre-Loading
 - Understaning & Optimizing Angular Change Detection
+- Optimize Change Detection using @ngrx/component & ngrxPush
 
 ## Understanding & using Ivy
 
@@ -113,10 +114,10 @@ Kenntnisse im Umgang mit Git
 ## Reactive Forms Deep Dive
 
 - Recap Reactive Forms Revisited (FormControl, Forms Array, Form Builder)
+- Async Pipe & Declarative Binding
 - Implementing Custom Validatiors
 - Cascading Form Controls
 - Dynamic Form Generation & Validation (Manual & ngx-formly)
-- Optimize Change Detection using @ngrx/component & ngrxPush in Reactive Forms
 
 ## Routing & Securing Angular using NgRx
 

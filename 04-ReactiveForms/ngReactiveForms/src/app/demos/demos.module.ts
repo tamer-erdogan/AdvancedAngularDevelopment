@@ -15,10 +15,18 @@ import { FormControlComponent } from './samples/form-control/form-control.compon
 import { FormArrayComponent } from './samples/form-array/form-array.component';
 import { ReactiveValidationComponent } from './samples/reactive-validation/reactive-validation.component';
 import { ReactiveCascadeComponent } from './samples/reactive-cascade/reactive-cascade.component';
-import { NgrxComponent } from './samples/ngrx/ngrx.component';
-import { DynamicManualComponent } from './samples/dynamic-manual/dynamic-manual.component';
 import { NgxFormlyComponent } from './samples/ngx-formly/ngx-formly.component';
 import { AsyncPipeComponent } from './samples/async-pipe/async-pipe.component';
+import {
+  MAT_FORM_FIELD_DEFAULT_OPTIONS,
+  MatFormFieldDefaultOptions,
+} from '@angular/material/form-field';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyMaterialModule } from '@ngx-formly/material';
+
+const appearance: MatFormFieldDefaultOptions = {
+  appearance: 'standard',
+};
 
 const demoRoutes: Routes = [
   {
@@ -33,9 +41,7 @@ const demoRoutes: Routes = [
       { path: 'formarray', component: FormArrayComponent },
       { path: 'validation', component: ReactiveValidationComponent },
       { path: 'cascade', component: ReactiveCascadeComponent },
-      { path: 'ngrx', component: NgrxComponent },
-      { path: 'ngx-formly', component: NgrxComponent },
-      { path: 'dynamic-manual', component: NgxFormlyComponent },
+      { path: 'ngx-formly', component: NgxFormlyComponent },
     ],
   },
 ];
@@ -50,8 +56,6 @@ const demoRoutes: Routes = [
     FormArrayComponent,
     ReactiveValidationComponent,
     ReactiveCascadeComponent,
-    NgrxComponent,
-    DynamicManualComponent,
     NgxFormlyComponent,
     AsyncPipeComponent,
   ],
@@ -67,7 +71,18 @@ const demoRoutes: Routes = [
     MarkdownModule.forRoot({
       loader: HttpClient,
     }),
+    FormlyModule.forRoot({
+      validationMessages: [
+        { name: 'required', message: 'This field is required' },
+      ],
+    }),
+    FormlyMaterialModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: appearance,
+    },
+  ],
 })
 export class DemosModule {}
