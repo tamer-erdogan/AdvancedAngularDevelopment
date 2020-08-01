@@ -25,7 +25,7 @@ import { SkillsListComponent } from './samples/change-detection/skills-list/skil
 import { SkillComponent } from './samples/change-detection/skill/skill.component';
 import { DebugStatementsComponent } from './samples/debug-statements/debug-statements.component';
 import { InjectConfigComponent } from './samples/inject-config/inject-config.component';
-import { NgrxCompComponent } from './samples/ngrx-comp/ngrx-comp.component';
+import { NgrxpushComponent } from './samples/ngrxpush/ngrxpush.component';
 
 const demoRoutes: Routes = [
   {
@@ -39,7 +39,7 @@ const demoRoutes: Routes = [
       { path: 'ngprobe', component: NgprobeComponent },
       { path: 'debug-statements', component: DebugStatementsComponent },
       { path: 'changedetection', component: ChangeDetectionComponent },
-      { path: 'ngrx-comp', component: NgrxCompComponent },
+      { path: 'ngrx-comp', component: NgrxpushComponent },
     ],
   },
 ];
@@ -58,7 +58,7 @@ const demoRoutes: Routes = [
     SkillComponent,
     DebugStatementsComponent,
     InjectConfigComponent,
-    NgrxCompComponent,
+    NgrxpushComponent,
   ],
   imports: [
     CommonModule,

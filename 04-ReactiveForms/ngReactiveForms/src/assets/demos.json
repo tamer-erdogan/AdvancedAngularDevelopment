@@ -14,9 +14,9 @@
     "visible": true
   },
   {
-    "url": "subjects",
+    "url": "custom-validators",
     "topicid": 2,
-    "title": "Subjects",
+    "title": "Custom Validators",
     "component": "SubjectsComponent",
     "visible": true
   },
