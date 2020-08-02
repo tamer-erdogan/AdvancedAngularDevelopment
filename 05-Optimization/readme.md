@@ -46,4 +46,6 @@ source-map-explorer dist/main-es5.28a67cbad0b0a3f17e1e.js
 
 ## Readings
 
+Parts of the slides are taken from:
+
 [The Last Guide For Angular Change Detection You'll Ever Need - (c) Michael Hoffmann](https://www.mokkapps.de/blog/the-last-guide-for-angular-change-detection-you-will-ever-need/#:~:text=By%20default%2C%20Angular%20Change%20Detection,which%20produces%20VM%2Doptimized%20code.)
