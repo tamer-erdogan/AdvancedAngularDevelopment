@@ -2,7 +2,7 @@
 
 [Nx Home](https://nx.dev/angular)
 
-[Nx CLI](https://nx.dev/web/guides/cli)
+[Nx CLI](https://nx.dev/angular/cli/overview)
 
 [Getting Started](https://nx.dev/angular/getting-started/getting-started)
 
@@ -10,7 +10,7 @@
 
 ## Scaffolding
 
-Install nx-cli:
+Install nx Cli to be able to use nx command instead of ng:
 
 ```
 npm i -g @nrwl/schematics @nrwl/cli
@@ -19,18 +19,18 @@ npm i -g @nrwl/schematics @nrwl/cli
 Create Workspace, Add Angular:
 
 ```typescript
-npx create-nx-workspace@latest ngDemoApp-Nx
+npx create-nx-workspace@latest AngularRepo
 ```
 
-Select Project Type:
+Select Workspace Type & Metadata
 
-![nx-create](../_images/nx-create-ws.png)
+![nx-create](_images/nx-create-ws.png)
 
-
+Specify adv. Options:
 
 ```typescript
-npx create-nx-workspace@latest ngDemoAppWS --preset=empty
-cd ng-demo-app-nx
+npx create-nx-workspace EmptyRepo --preset=empty
+cd empty-repo
 ng g app angularapp --e2e-test-runner=cypress
 ```
 
@@ -71,16 +71,16 @@ Implement the Button:
 _.ts & _.html
 
 ```typescript
-import { Component, OnInit, EventEmitter, Input, Output } from "@angular/core";
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: "ux-button",
-  templateUrl: "./ux-button.component.html",
-  styleUrls: ["./ux-button.component.scss"]
+  selector: 'ux-button',
+  templateUrl: './ux-button.component.html',
+  styleUrls: ['./ux-button.component.scss'],
 })
 export class UxButtonComponent implements OnInit {
   @Input() disabled = false;
-  @Input() label = "";
+  @Input() label = '';
   @Input() icon: string;
   @Output() onClick: EventEmitter<void> = new EventEmitter();
 
@@ -104,14 +104,14 @@ export class UxButtonComponent implements OnInit {
 Export the button:
 
 ```typescript
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { UxButtonComponent } from "./ux-button/ux-button.component";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UxButtonComponent } from './ux-button/ux-button.component';
 
 @NgModule({
   imports: [CommonModule],
   declarations: [UxButtonComponent],
-  exports: [UxButtonComponent]
+  exports: [UxButtonComponent],
 })
 export class UxSystemModule {}
 ```
@@ -119,23 +119,23 @@ export class UxSystemModule {}
 Use the Button in the two projects:
 
 ```typescript
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import { AppComponent } from "./app.component";
-import { RouterModule } from "@angular/router";
+import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
 
-import { UxSystemModule } from "@ng-demo-app-ws/ux-system";
+import { UxSystemModule } from '@ng-demo-app-ws/ux-system';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     UxSystemModule,
-    RouterModule.forRoot([], { initialNavigation: "enabled" })
+    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -152,10 +152,10 @@ Add it to App Component
 
 ```typescript
 export class AppComponent {
-  title = "ng-demo-ui";
+  title = 'ng-demo-ui';
 
   doClick() {
-    console.log("you clicked");
+    console.log('you clicked');
   }
 }
 ```

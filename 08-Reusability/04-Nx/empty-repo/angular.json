@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "projects": {},
+  "cli": {
+    "defaultCollection": "@nrwl/workspace",
+    "analytics": "114f5d81-a9d0-4584-b0f9-738e5ee55dbe"
+  }
+}
