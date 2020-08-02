@@ -28,6 +28,9 @@
     "ng-skills-e2e": {
       "tags": [],
       "implicitDependencies": ["ng-skills"]
+    },
+    "ux-controls": {
+      "tags": []
     }
   }
 }

@@ -123,6 +123,38 @@
           }
         }
       }
+    },
+    "ux-controls": {
+      "projectType": "library",
+      "root": "libs/ux-controls",
+      "sourceRoot": "libs/ux-controls/src",
+      "prefix": "angular-repo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ux-controls/tsconfig.lib.json",
+              "libs/ux-controls/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ux-controls/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ux-controls/jest.config.js",
+            "tsConfig": "libs/ux-controls/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ux-controls/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "sass"
+        }
+      }
     }
   },
   "cli": {

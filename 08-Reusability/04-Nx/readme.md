@@ -41,35 +41,26 @@ Test the app using Jest (default)
 nx test ng-skills
 ```
 
-Starting with an Empty project:
+Run the app:
 
-```typescript
-npx create-nx-workspace EmptyRepo --preset=empty
-cd empty-repo
-npm install --save-dev @nrwl/angular
-nx generate @nrwl/angular:app skills-app --e2e-test-runner=cypress --unit-test-runner=jest --style=sass
 ```
-
-Add two projects:
-
-```typescript
-ng g @nrwl/angular:app ng-skills --e2e-test-runner=cypress --unit-test-runner=jest --style=sass
-ng g @nrwl/angular:app ng-other
+nx s -o ng-skills
 ```
 
 ## Button Implementation
 
-Add a lib project & a button component to it:
+Add a lib project and a button and a split component to it:
 
 ```typescript
-ng g @nrwl/angular:lib ux-system
-ng g component uxButton --project=ux-system --export --selector=ux-button
+ng g @nrwl/angular:lib ux-controls --style=sass
+ng g @nrwl/angular:component ux-button --project=ux-controls
+ng g component ux-split --project=ux-controls --export --selector=ux-split
 ```
 
 Add Material to nx workspace:
 
 ```
-npm install -S @angular/material @angular/cdk @angular/flex-layout @angular/animations hammerjs
+npm install -S @angular/material @angular/cdk @angular/flex-layout @angular/animations
 ```
 
 Add Material to apps\ng-demo-ui & apps\other-app
@@ -186,4 +177,20 @@ Show Dependency Graph
 
 ```
 nx dep-graph
+```
+
+## Starting with an Empty project:
+
+```typescript
+npx create-nx-workspace EmptyRepo --preset=empty
+cd empty-repo
+npm install --save-dev @nrwl/angular
+nx generate @nrwl/angular:app skills-app --e2e-test-runner=cypress --unit-test-runner=jest --style=sass
+```
+
+Add two projects:
+
+```typescript
+ng g @nrwl/angular:app ng-skills --e2e-test-runner=cypress --unit-test-runner=jest --style=sass
+ng g @nrwl/angular:app ng-other
 ```
