@@ -2,6 +2,10 @@
 
 [Angular Library Docs](https://angular.io/guide/libraries)
 
+[Multible Projects - Angular File Structure](https://angular.io/guide/file-structure)
+
+[Angular Strict Mode](https://angular.io/guide/strict-mode)
+
 ## Add Project & Cleanup
 
 Create a host project & Add Material & Flex Layout:
@@ -41,9 +45,9 @@ const comps = [SplitComponent];
 @NgModule({
   declarations: comps,
   imports: [MatToolbarModule, FlexLayoutModule],
-  exports: comps
+  exports: comps,
 })
-export class UxControlsModule { }
+export class UxControlsModule {}
 ```
 
 Update PeerDependencies in `package.json` of the library:
@@ -65,17 +69,17 @@ Implement the Component:
 split.component.ts
 
 ```typescript
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "ux-split",
-  templateUrl: "./split.component.html",
-  styleUrls: ["./split.component.scss"]
+  selector: 'ux-split',
+  templateUrl: './split.component.html',
+  styleUrls: ['./split.component.scss'],
 })
 export class SplitComponent implements OnInit {
   constructor() {}
 
-  toolbar = "100px";
+  toolbar = '100px';
 
   ngOnInit() {}
 }
