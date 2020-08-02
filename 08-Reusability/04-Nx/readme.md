@@ -69,19 +69,57 @@ Add Material to nx workspace:
 npm install -S @angular/material @angular/cdk @angular/flex-layout @angular/animations
 ```
 
-Add Material to apps\ng-demo-ui & apps\other-app
+Add Material to apps\ng-skills & apps\ng-otherapp
 
 ```
-ng add @angular/material
+ng add @angular/material --project=ng-skills
+ng add @angular/material --project=ng-otherapp
 ```
 
-Implement the MaterialModule:
+Implement the Material Module in the lib
 
-> Note: Just copy a current Module from any Material Sample
+```
+nx g module material --project=ux-controls
+```
+
+```
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+@NgModule({
+  declarations: [],
+  imports: [CommonModule, MatButtonModule, MatIconModule, FlexLayoutModule],
+  exports: [MatButtonModule, MatIconModule, FlexLayoutModule],
+})
+export class MaterialModule {}
+
+```
+
+> Note: Just copy the content of a Material Module from any [Material Stackblitz Sample](https://material.angular.io/components/categories)
+
+Add the Material Module to `ux-controls.module.ts`:
+
+```
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UxButtonComponent } from './ux-button/ux-button.component';
+import { UxSplitComponent } from './ux-split/ux-split.component';
+import { MaterialModule } from './material/material.module';
+
+@NgModule({
+  imports: [CommonModule, MaterialModule],
+  declarations: [UxButtonComponent, UxSplitComponent],
+  exports: [UxSplitComponent],
+})
+export class UxControlsModule {}
+```
 
 Implement the Button:
 
-_.ts & _.html
+ux-button.ts & ux-button.html
 
 ```typescript
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
@@ -89,7 +127,7 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'ux-button',
   templateUrl: './ux-button.component.html',
-  styleUrls: ['./ux-button.component.scss'],
+  styleUrls: ['./ux-button.component.sass'],
 })
 export class UxButtonComponent implements OnInit {
   @Input() disabled = false;
@@ -120,13 +158,15 @@ Export the button:
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UxButtonComponent } from './ux-button/ux-button.component';
+import { UxSplitComponent } from './ux-split/ux-split.component';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [UxButtonComponent],
-  exports: [UxButtonComponent],
+  imports: [CommonModule, MaterialModule],
+  declarations: [UxButtonComponent, UxSplitComponent],
+  exports: [UxSplitComponent, UxButtonComponent],
 })
-export class UxSystemModule {}
+export class UxControlsModule {}
 ```
 
 Use the Button in the two projects:
@@ -136,17 +176,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-
-import { UxSystemModule } from '@ng-demo-app-ws/ux-system';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UxControlsModule } from '@angular-repo/ux-controls';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    UxSystemModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
-  ],
+  imports: [BrowserModule, BrowserAnimationsModule, UxControlsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
@@ -156,16 +191,26 @@ export class AppModule {}
 Add it to App Component
 
 ```html
-<ux-button
-  [icon]="'bug_report'"
-  [label]="'Report Bug'"
-  (onClick)="doClick()"
-></ux-button>
+<div>
+  <h3>{{title}}</h3>
+  <ux-button
+    [icon]="'bug_report'"
+    [label]="'Report Bug'"
+    (onClick)="doClick()"
+  ></ux-button>
+</div>
 ```
 
 ```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'angular-repo-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+})
 export class AppComponent {
-  title = 'ng-demo-ui';
+  title = 'ng-skills';
 
   doClick() {
     console.log('you clicked');
@@ -176,14 +221,20 @@ export class AppComponent {
 Test the Button:
 
 ```
-ng serve ng-demo-ui
+nx s -o ng-skills
 ```
+
+> Note: repate the steps in the second project
 
 Show Dependency Graph
 
 ```
 nx dep-graph
 ```
+
+You should see something similar:
+
+![dep-graph](_images/dep-graph.png)
 
 ## Starting with an Empty project:
 

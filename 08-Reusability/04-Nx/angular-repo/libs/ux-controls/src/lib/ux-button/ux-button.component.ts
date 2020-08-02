@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'angular-repo-ux-button',
+  selector: 'ux-button',
   templateUrl: './ux-button.component.html',
-  styleUrls: ['./ux-button.component.sass']
+  styleUrls: ['./ux-button.component.sass'],
 })
 export class UxButtonComponent implements OnInit {
+  @Input() disabled = false;
+  @Input() label = '';
+  @Input() icon: string;
+  @Output() onClick: EventEmitter<void> = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit() {}
+
+  buttonClicked() {
+    this.onClick.emit();
   }
-
 }
