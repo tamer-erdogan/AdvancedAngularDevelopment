@@ -57,6 +57,12 @@ ng g @nrwl/angular:component ux-button --project=ux-controls
 ng g component ux-split --project=ux-controls --export --selector=ux-split
 ```
 
+Add a second app used for dependency graph later on:
+
+```
+nx generate @nrwl/angular:app ng-otherapp --routing --style=scss
+```
+
 Add Material to nx workspace:
 
 ```

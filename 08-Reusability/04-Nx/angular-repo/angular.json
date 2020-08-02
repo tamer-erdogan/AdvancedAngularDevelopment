@@ -155,6 +155,129 @@
           "style": "sass"
         }
       }
+    },
+    "ng-otherapp": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/ng-otherapp",
+      "sourceRoot": "apps/ng-otherapp/src",
+      "prefix": "angular-repo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/ng-otherapp",
+            "index": "apps/ng-otherapp/src/index.html",
+            "main": "apps/ng-otherapp/src/main.ts",
+            "polyfills": "apps/ng-otherapp/src/polyfills.ts",
+            "tsConfig": "apps/ng-otherapp/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/ng-otherapp/src/favicon.ico",
+              "apps/ng-otherapp/src/assets"
+            ],
+            "styles": ["apps/ng-otherapp/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ng-otherapp/src/environments/environment.ts",
+                  "with": "apps/ng-otherapp/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng-otherapp:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-otherapp:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-otherapp:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/ng-otherapp/tsconfig.app.json",
+              "apps/ng-otherapp/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/ng-otherapp/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/ng-otherapp/jest.config.js",
+            "tsConfig": "apps/ng-otherapp/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/ng-otherapp/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "ng-otherapp-e2e": {
+      "root": "apps/ng-otherapp-e2e",
+      "sourceRoot": "apps/ng-otherapp-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ng-otherapp-e2e/cypress.json",
+            "tsConfig": "apps/ng-otherapp-e2e/tsconfig.e2e.json",
+            "devServerTarget": "ng-otherapp:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-otherapp:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/ng-otherapp-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/ng-otherapp-e2e/**/*"]
+          }
+        }
+      }
     }
   },
   "cli": {
