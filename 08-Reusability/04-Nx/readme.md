@@ -13,7 +13,7 @@
 Install nx Cli to be able to use nx command instead of ng:
 
 ```
-npm i -g @nrwl/schematics @nrwl/cli
+npm i -g @nrwl/schematics @nrwl/cli @nrwl/workspace
 ```
 
 Create Workspace, Add Angular:
@@ -26,19 +26,35 @@ Select Workspace Type & Metadata
 
 ![nx-create](_images/nx-create-ws.png)
 
-Specify adv. Options:
+Build the app `ng-skills`:
+
+```
+ng build ng-skills |
+nx buils ng-skills
+```
+
+> Note: `nx buils ng-skills` uses cache and builds only when there are changes
+
+Test the app using Jest (default)
+
+```
+nx test ng-skills
+```
+
+Starting with an Empty project:
 
 ```typescript
 npx create-nx-workspace EmptyRepo --preset=empty
 cd empty-repo
-ng g app angularapp --e2e-test-runner=cypress
+npm install --save-dev @nrwl/angular
+nx generate @nrwl/angular:app skills-app --e2e-test-runner=cypress --unit-test-runner=jest --style=sass
 ```
 
 Add two projects:
 
 ```typescript
-ng g @nrwl/angular:app ngDemoUI --e2e-test-runner=cypress --unit-test-runner=jest
-ng g @nrwl/angular:app OtherApp
+ng g @nrwl/angular:app ng-skills --e2e-test-runner=cypress --unit-test-runner=jest --style=sass
+ng g @nrwl/angular:app ng-other
 ```
 
 ## Button Implementation
