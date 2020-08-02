@@ -1,4 +1,4 @@
-# Monorepos & Nx
+# Monorepos & nrwl nx
 
 [Nx Home](https://nx.dev/angular)
 
