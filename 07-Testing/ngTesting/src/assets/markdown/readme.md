@@ -141,10 +141,6 @@ When running for the first time
 - a popup is shown
 - the cypress folder in the project is created
 
-![cypers](./_images/cypress.png)
-
-![cypers](./_images/cypress-popup.png)
-
 ## Write a Test
 
 [Writing your first test](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html)

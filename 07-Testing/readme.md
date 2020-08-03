@@ -151,9 +151,9 @@ When running for the first time
 - a popup is shown
 - the cypress folder in the project is created
 
-![cypers](./_images/cypress.png)
+![cypres](./_images/cypress.png)
 
-![cypers](./_images/cypress-popup.png)
+![cypres](./_images/cypress-popup.png)
 
 ## Write a Test
 
