@@ -12,26 +12,26 @@ describe('Demos Reducer', () => {
 
   describe('[Demos] Add Demo', () => {
     it('should return a new state with the added item', () => {
-      let item = {
+      const item = {
         url: 'unittesting',
         title: 'Into Unit Testing',
         component: 'UnitTestingComponent',
         id: 1,
         topicid: 1,
         visible: true,
-        sortOrder: 0
+        sortOrder: 0,
       };
 
-      let designated = {
-        '1': {
+      const designated = {
+        1: {
           url: 'unittesting',
           title: 'Into Unit Testing',
           component: 'UnitTestingComponent',
           id: 1,
           topicid: 1,
           visible: true,
-          sortOrder: 0
-        }
+          sortOrder: 0,
+        },
       };
 
       const action = new AddDemo(item);

@@ -14,19 +14,19 @@ describe('Component: Login - done', () => {
     TestBed.configureTestingModule({
       declarations: [AsyncComponent],
       schemas: [NO_ERRORS_SCHEMA],
-      providers: [SimpleAuthService]
+      providers: [SimpleAuthService],
     });
 
     fixture = TestBed.createComponent(AsyncComponent);
     component = fixture.componentInstance;
-    service = TestBed.get(SimpleAuthService);
+    service = TestBed.inject(SimpleAuthService);
   });
 
   it('component has been created', () => {
     expect(component.needsLogin).toBeTruthy();
   });
 
-  it('returns false when the user is not authenticated', done => {
+  it('returns false when the user is not authenticated', (done) => {
     fixture.detectChanges();
     expect(component.needsLogin).toBeTruthy();
     expect(
@@ -37,13 +37,13 @@ describe('Component: Login - done', () => {
     done();
   });
 
-  it('returns true when the user is authenticated', done => {
+  it('returns true when the user is authenticated', (done) => {
     fixture.detectChanges();
     let spy = spyOn(service, 'isAuthenticated').and.returnValue(of(true));
     component.ngOnInit();
 
     spy.calls.mostRecent().returnValue.subscribe(() => {
-      //apply changes from spy mock
+      // apply changes from spy mock
       fixture.detectChanges();
       expect(
         fixture.debugElement

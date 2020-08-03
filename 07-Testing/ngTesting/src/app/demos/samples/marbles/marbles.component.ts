@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-marbles',
   templateUrl: './marbles.component.html',
-  styleUrls: ['./marbles.component.scss']
+  styleUrls: ['./marbles.component.scss'],
 })
-export class MarblesComponent implements OnInit {
+export class MarblesComponent implements OnInit, OnDestroy {
   title = 'MarbleDemo';
 
   users: string[] = [];
@@ -17,7 +17,7 @@ export class MarblesComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.subscription = this.userService.getUsers.subscribe(user => {
+    this.subscription = this.userService.getUsers.subscribe((user) => {
       this.users.push(user);
     });
   }

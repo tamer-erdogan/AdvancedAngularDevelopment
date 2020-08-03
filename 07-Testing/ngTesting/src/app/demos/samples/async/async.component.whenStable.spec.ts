@@ -14,12 +14,12 @@ describe('Component: Login - whenStable', () => {
     TestBed.configureTestingModule({
       declarations: [AsyncComponent],
       schemas: [NO_ERRORS_SCHEMA],
-      providers: [SimpleAuthService]
+      providers: [SimpleAuthService],
     });
 
     fixture = TestBed.createComponent(AsyncComponent);
     component = fixture.componentInstance;
-    service = TestBed.get(SimpleAuthService);
+    service = TestBed.inject(SimpleAuthService);
   });
 
   it('component has been created', async(() => {
