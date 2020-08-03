@@ -64,4 +64,8 @@ Run App, select sample 'Change Detection' open console and enter:
 ng.profiler.timeChangeDetection()
 ```
 
-> Note: Running ng.profiler.timeChangeDetection({record: true})
+Change ChangeDetectionStrategy in `skills-list.component.ts` and compare values
+
+Using `Running ng.profiler.timeChangeDetection({record: true})` allows you to see a detailed execution report using JavaScriptProfiler
+
+![change-detection.png](_images/change-detection.png)
