@@ -19,14 +19,16 @@ class MockAuthService {
 describe('UseMockComponent', () => {
   let component: UseMockComponent;
 
-  let mockservice = new MockAuthService();
+  const mockservice = new MockAuthService();
 
   beforeEach(() => {
     component = new UseMockComponent(mockservice);
   });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
   it('should return Authenticated true', () => {
     expect(component.loggedIn).toBe(true);
   });
