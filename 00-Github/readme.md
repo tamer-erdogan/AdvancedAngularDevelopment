@@ -62,6 +62,8 @@ Push new Branch to remote: `git push origin [name_of_your_new_branch]`
 
 Switch to Branch: `git checkout [name_of_your_branch]`
 
+> Note: When switching branches it is always good advice to check the status with `git status` on a windows machine. When there are changes from other branches on the disk you can clean the branch using `git clean -f`
+
 Merge Branch: `git merge [branch_to_merge]`
 
 ## Remotes
