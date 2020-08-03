@@ -1,10 +1,19 @@
 {
   "demos": [
     {
+      "url": "lighthouse",
+      "title": "Lighthose",
+      "component": "LighthouseComponent",
+      "id": 1,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
       "url": "bundles",
       "title": "Bundle Analyzer",
       "component": "BundlesComponent",
-      "id": 1,
+      "id": 2,
       "topicid": 1,
       "visible": true,
       "sortOrder": 0
@@ -13,7 +22,7 @@
       "url": "logger",
       "title": "Logger",
       "component": "LoggerComponent",
-      "id": 2,
+      "id": 3,
       "topicid": 1,
       "visible": true,
       "sortOrder": 0
@@ -22,15 +31,6 @@
       "url": "inject-config",
       "title": "Inject Config",
       "component": "InjectConfigComponent",
-      "id": 3,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
-    },
-    {
-      "url": "ngprobe",
-      "title": "ng.probe()",
-      "component": "ConsoleComponent",
       "id": 4,
       "topicid": 1,
       "visible": true,
@@ -41,15 +41,6 @@
       "title": "Debug Statements",
       "component": "DebugStatementsComponent",
       "id": 5,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
-    },
-    {
-      "url": "webworker",
-      "title": "Web Worker",
-      "component": "WebWorkerComponent",
-      "id": 6,
       "topicid": 1,
       "visible": true,
       "sortOrder": 0
@@ -68,6 +59,33 @@
       "title": "@ngrx/component",
       "component": "NgrxpushComponent",
       "id": 8,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "vscroll",
+      "title": "Virtual Scroll",
+      "component": "VirtualScrollComponent",
+      "id": 6,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "ngfor",
+      "title": "Optimized *ngFor",
+      "component": "NgforComponent",
+      "id": 10,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "webworker",
+      "title": "Web Worker",
+      "component": "WebWorkerComponent",
+      "id": 9,
       "topicid": 1,
       "visible": true,
       "sortOrder": 0

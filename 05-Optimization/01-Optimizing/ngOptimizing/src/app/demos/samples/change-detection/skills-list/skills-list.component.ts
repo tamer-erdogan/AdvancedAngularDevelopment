@@ -2,16 +2,16 @@ import {
   Component,
   OnInit,
   Input,
-  ChangeDetectionStrategy
-} from "@angular/core";
-import { Skill } from "src/app/model/skills/skills";
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import { Skill } from 'src/app/model/skills/skills';
 
-//TODO: Toggle changeDetection from ChangeDetectionStrategy.Default to ChangeDetectionStrategy.OnPush
+// TODO: Toggle changeDetection from ChangeDetectionStrategy.Default to ChangeDetectionStrategy.OnPush
 @Component({
-  selector: "app-skills-list",
-  templateUrl: "./skills-list.component.html",
-  styleUrls: ["./skills-list.component.scss"],
-  changeDetection: ChangeDetectionStrategy.Default
+  selector: 'app-skills-list',
+  templateUrl: './skills-list.component.html',
+  styleUrls: ['./skills-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class SkillsListComponent implements OnInit {
   @Input() skills: Skill[];
@@ -25,6 +25,6 @@ export class SkillsListComponent implements OnInit {
   }
 
   check() {
-    console.log("check SkillsListComponent");
+    console.log('check SkillsListComponent');
   }
 }

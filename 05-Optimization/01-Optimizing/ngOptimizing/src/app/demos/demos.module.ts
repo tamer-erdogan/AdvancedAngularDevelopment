@@ -19,13 +19,15 @@ import { LoggerComponent } from './samples/logger/logger.component';
 import { BundlesComponent } from './samples/bundles/bundles.component';
 import { ConsoleComponent } from './samples/console/console.component';
 import { ChangeDetectionComponent } from './samples/change-detection/change-detection.component';
-import { NgprobeComponent } from './samples/ngprobe/ngprobe.component';
 import { WebWorkerComponent } from './samples/web-worker/web-worker.component';
 import { SkillsListComponent } from './samples/change-detection/skills-list/skills-list.component';
 import { SkillComponent } from './samples/change-detection/skill/skill.component';
 import { DebugStatementsComponent } from './samples/debug-statements/debug-statements.component';
 import { InjectConfigComponent } from './samples/inject-config/inject-config.component';
 import { NgrxpushComponent } from './samples/ngrxpush/ngrxpush.component';
+import { LighthouseComponent } from './samples/lighthouse/lighthouse.component';
+import { VirtualScrollComponent } from './samples/virtual-scroll/virtual-scroll.component';
+import { NgforComponent } from './samples/ngfor/ngfor.component';
 
 const demoRoutes: Routes = [
   {
@@ -36,10 +38,12 @@ const demoRoutes: Routes = [
       { path: 'bundles', component: BundlesComponent },
       { path: 'inject-config', component: InjectConfigComponent },
       { path: 'webworker', component: WebWorkerComponent },
-      { path: 'ngprobe', component: NgprobeComponent },
+      { path: 'lighthouse', component: LighthouseComponent },
       { path: 'debug-statements', component: DebugStatementsComponent },
       { path: 'changedetection', component: ChangeDetectionComponent },
       { path: 'ngrx-comp', component: NgrxpushComponent },
+      { path: 'vscroll', component: VirtualScrollComponent },
+      { path: 'ngfor', component: NgforComponent },
     ],
   },
 ];
@@ -52,13 +56,15 @@ const demoRoutes: Routes = [
     BundlesComponent,
     ConsoleComponent,
     ChangeDetectionComponent,
-    NgprobeComponent,
     WebWorkerComponent,
     SkillsListComponent,
     SkillComponent,
     DebugStatementsComponent,
     InjectConfigComponent,
     NgrxpushComponent,
+    LighthouseComponent,
+    VirtualScrollComponent,
+    NgforComponent,
   ],
   imports: [
     CommonModule,

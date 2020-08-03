@@ -1,3 +1,5 @@
+<app-markdown-renderer [md]="'change-detection'"></app-markdown-renderer>
+
 <mat-card>
   <mat-card-header>
     <mat-card-title>{{ title }}</mat-card-title>
@@ -10,4 +12,4 @@
   </mat-card-actions>
 </mat-card>
 
-<app-skills-list [skills]="skills"></app-skills-list>
+<app-skills-list [skills]="skills | async"></app-skills-list>
