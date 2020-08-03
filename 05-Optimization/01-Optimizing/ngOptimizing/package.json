@@ -13,7 +13,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "withdb": "concurrently \"json-server --watch db.json\" \"ng serve\""
+    "stats": "ng build --prod --statsJson",
+    "analyze": "webpack-bundle-analyzer ./dist/maintenance-ui/stats.json -p 5010"
   },
   "private": true,
   "dependencies": {
