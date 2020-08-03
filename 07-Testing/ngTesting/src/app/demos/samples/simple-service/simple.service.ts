@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class SimpleMessageService {
   constructor() {}
@@ -13,7 +13,7 @@ export class SimpleMessageService {
   }
 
   delete(msg: string) {
-    this.messages = this.messages.filter(item => item != msg);
+    this.messages = this.messages.filter((item) => item != msg);
   }
 
   clear() {
