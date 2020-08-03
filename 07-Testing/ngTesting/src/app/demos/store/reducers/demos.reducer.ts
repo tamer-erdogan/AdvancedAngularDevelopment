@@ -1,14 +1,14 @@
-import { Action, createFeatureSelector, createSelector } from '@ngrx/store';
-import { DemoItem } from '../../demo-item.model';
 import {
-  EntityState,
-  EntityAdapter,
   createEntityAdapter,
-  Update
+  EntityAdapter,
+  EntityState,
+  Update,
 } from '@ngrx/entity';
-import { DemosActionTypes, DemosActions } from '../actions/demos.actions';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { DemoItem } from '../../demo-item.model';
+import { DemosActions, DemosActionTypes } from '../actions/demos.actions';
 
-//State
+// State
 
 export const demosFeatureKey = 'demos';
 
@@ -32,31 +32,28 @@ export const defaultDemoItemState: DemoState = {
     sortOrder: 0,
     visible: true,
     url: '',
-    topicid: 1
-  }
+    topicid: 1,
+  },
 };
 
 export const initialState = demosAdapter.getInitialState(defaultDemoItemState);
 
-//Selectors
+// Selectors
 
 export const getDemoState = createFeatureSelector<DemoState>(demosFeatureKey);
 
-//Note: Selector refactor to use Entity
+// Note: Selector refactor to use Entity
 export const getDemoEntities = createSelector(
   getDemoState,
   demosAdapter.getSelectors().selectAll
 );
 
-//Note: Make this structure iterable again for the template
-export const getAllDemos = createSelector(
-  getDemoEntities,
-  entities => {
-    return Object.keys(entities).map(id => entities[parseInt(id, 10)]);
-  }
-);
+// Note: Make this structure iterable again for the template
+export const getAllDemos = createSelector(getDemoEntities, (entities) => {
+  return Object.keys(entities).map((id) => entities[parseInt(id, 10)]);
+});
 
-//Reducer
+// Reducer
 
 export function DemosReducer(
   state: DemoState = initialState,
@@ -64,31 +61,31 @@ export function DemosReducer(
 ): DemoState {
   switch (action.type) {
     case DemosActionTypes.LoadDemosSuccess: {
-      return demosAdapter.addAll(action.payload, {
-        ...state
+      return demosAdapter.setAll(action.payload, {
+        ...state,
       });
     }
     case DemosActionTypes.LoadDemosError: {
       return { ...state };
     }
     case DemosActionTypes.DeleteDemoSuccess: {
-      let deleted: DemoItem = action.payload;
+      const deleted: DemoItem = action.payload;
       return demosAdapter.removeOne(deleted.id, { ...state });
     }
     case DemosActionTypes.DeleteDemoError: {
       return { ...state };
     }
     case DemosActionTypes.AddDemo: {
-      let add: DemoItem = action.payload;
+      const add: DemoItem = action.payload;
       return demosAdapter.addOne(add, { ...state });
     }
     case DemosActionTypes.SetSelected: {
       return { ...state, selected: action.payload as DemoItem };
     }
     case DemosActionTypes.ToggleVisiblity: {
-      let item: Update<DemoItem> = {
+      const item: Update<DemoItem> = {
         id: action.payload.id,
-        changes: { visible: action.payload.visible }
+        changes: { visible: action.payload.visible },
       };
       return demosAdapter.updateOne(item, { ...state });
     }

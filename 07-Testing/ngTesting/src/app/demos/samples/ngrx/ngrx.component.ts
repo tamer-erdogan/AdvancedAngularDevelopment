@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ngrx',
   templateUrl: './ngrx.component.html',
-  styleUrls: ['./ngrx.component.scss']
+  styleUrls: ['./ngrx.component.scss'],
 })
 export class NgrxComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

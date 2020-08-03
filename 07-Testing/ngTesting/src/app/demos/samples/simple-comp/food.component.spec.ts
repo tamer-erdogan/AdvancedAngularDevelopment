@@ -4,24 +4,24 @@ import { of } from 'rxjs';
 
 describe('FoodComponent:', () => {
   let comp: FoodComponent;
-  let foodData: FoodItem[] = [
+  const foodData: FoodItem[] = [
     { name: 'Pad Thai', rating: 5 },
     { name: 'Butter Chicken', rating: 5 },
     { name: 'Cannelloni', rating: 4 },
-    { name: 'Cordon Bleu', rating: 2 }
+    { name: 'Cordon Bleu', rating: 2 },
   ];
   let mockFS;
 
-  let serviceResult = [
+  const serviceResult = [
     { name: 'Pad Thai', rating: 5 },
     { name: 'Butter Chicken', rating: 5 },
-    { name: 'Cannelloni', rating: 4 }
+    { name: 'Cannelloni', rating: 4 },
   ];
 
   beforeEach(() => {});
 
   it('removes the item from the list', () => {
-    //in real life this would happen in beforeEach
+    // in real life this would happen in beforeEach
     mockFS = jasmine.createSpyObj(['getItems', 'deleteItem']);
     comp = new FoodComponent(mockFS);
 
@@ -33,7 +33,7 @@ describe('FoodComponent:', () => {
   });
 
   it('should call deleteItem', () => {
-    //in real life this would happen in beforeEach
+    // in real life this would happen in beforeEach
     mockFS = jasmine.createSpyObj(['getItems', 'deleteItem']);
     comp = new FoodComponent(mockFS);
 

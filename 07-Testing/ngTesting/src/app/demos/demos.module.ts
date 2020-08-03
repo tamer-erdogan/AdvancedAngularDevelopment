@@ -33,6 +33,7 @@ import { RatingPipe } from './samples/pipe/rating.pipe';
 import { FoodRowComponent } from './samples/integration-tests/food-row/food-row.component';
 import { FoodListComponent } from './samples/integration-tests/food-list/food-list.component';
 import { MockStoreComponent } from './samples/mock-store/mock-store.component';
+import { PhonenumberPipe } from './samples/pipe/phonenumber.pipe';
 
 const demoRoutes: Routes = [
   {
@@ -49,9 +50,9 @@ const demoRoutes: Routes = [
       { path: 'async', component: AsyncComponent },
       { path: 'marbles', component: MarblesComponent },
       { path: 'ngrx', component: NgrxComponent },
-      { path: 'mockstore', component: MockStoreComponent }
-    ]
-  }
+      { path: 'mockstore', component: MockStoreComponent },
+    ],
+  },
 ];
 
 @NgModule({
@@ -77,7 +78,8 @@ const demoRoutes: Routes = [
     AsyncComponent,
     MarblesComponent,
     NgrxComponent,
-    MockStoreComponent
+    MockStoreComponent,
+    PhonenumberPipe,
   ],
   imports: [
     CommonModule,
@@ -89,12 +91,12 @@ const demoRoutes: Routes = [
     MaterialModule,
     HttpClientModule,
     MarkdownModule.forRoot({
-      loader: HttpClient
+      loader: HttpClient,
     }),
     SharedModule,
     StoreModule.forFeature(demosFeatureKey, DemosReducer),
-    EffectsModule.forFeature([DemosEffects])
+    EffectsModule.forFeature([DemosEffects]),
   ],
-  providers: [SkillsService]
+  providers: [SkillsService],
 })
 export class DemosModule {}

@@ -3,7 +3,7 @@ import {
   ComponentFixture,
   TestBed,
   fakeAsync,
-  tick
+  tick,
 } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
@@ -19,12 +19,12 @@ describe('Component: Login - fakeAsync', () => {
     TestBed.configureTestingModule({
       declarations: [AsyncComponent],
       schemas: [NO_ERRORS_SCHEMA],
-      providers: [SimpleAuthService]
+      providers: [SimpleAuthService],
     });
 
     fixture = TestBed.createComponent(AsyncComponent);
     component = fixture.componentInstance;
-    service = TestBed.get(SimpleAuthService);
+    service = TestBed.inject(SimpleAuthService);
   });
 
   it('component has been created', fakeAsync(() => {

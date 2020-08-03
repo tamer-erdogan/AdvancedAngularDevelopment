@@ -1,5 +1,7 @@
 # Advanced Angular Testing
 
+[Jasmine Matchers](https://jasmine.github.io/api/edge/matchers.html)
+
 ## Jest
 
 [Jest Testing](https://jestjs.io/)
@@ -140,10 +142,6 @@ When running for the first time
 - cypress is installed,
 - a popup is shown
 - the cypress folder in the project is created
-
-![cypers](./_images/cypress.png)
-
-![cypers](./_images/cypress-popup.png)
 
 ## Write a Test
 

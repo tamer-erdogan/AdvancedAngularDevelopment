@@ -1,15 +1,15 @@
-import { VoucherValidator } from "./voucher-validator";
+import { VoucherValidator } from './voucher-validator';
 
-describe("Testing a simple Calss: VoucherValidator", function() {
-  var goodvoucher;
-  var badvoucher;
-  var nullVoucher;
+describe('Testing a simple Calss: VoucherValidator', () => {
+  let goodvoucher;
+  let badvoucher;
+  let nullVoucher;
 
-  beforeEach(function() {
+  beforeEach(() => {
     goodvoucher = {
       ID: 2,
-      Text: "BP Tankstelle",
-      Date: "2016-11-15T00:00:00",
+      Text: 'BP Tankstelle',
+      Date: '2016-11-15T00:00:00',
       Amount: 40,
       Paid: false,
       Expense: false,
@@ -19,25 +19,25 @@ describe("Testing a simple Calss: VoucherValidator", function() {
           ID: 2,
           VoucherID: 3,
           AccountID: 1,
-          Text: "USB Stick",
+          Text: 'USB Stick',
           Amount: 11,
-          Comment: null
+          Comment: null,
         },
         {
           ID: 7,
           VoucherID: 3,
           AccountID: 6,
-          Text: "Game of Thrones, Season 6",
+          Text: 'Game of Thrones, Season 6',
           Amount: 29,
-          Comment: null
-        }
-      ]
+          Comment: null,
+        },
+      ],
     };
 
     badvoucher = {
       ID: 2,
-      Text: "BP Tankstelle",
-      Date: "2016-11-15T00:00:00",
+      Text: 'BP Tankstelle',
+      Date: '2016-11-15T00:00:00',
       Amount: 650,
       Paid: false,
       Expense: false,
@@ -47,42 +47,39 @@ describe("Testing a simple Calss: VoucherValidator", function() {
           ID: 2,
           VoucherID: 3,
           AccountID: 1,
-          Text: "USB Stick",
+          Text: 'USB Stick',
           Amount: 11,
-          Comment: null
+          Comment: null,
         },
         {
           ID: 7,
           VoucherID: 3,
           AccountID: 6,
-          Text: "Game of Thrones, Season 6",
+          Text: 'Game of Thrones, Season 6',
           Amount: 55,
-          Comment: null
-        }
-      ]
+          Comment: null,
+        },
+      ],
     };
 
     nullVoucher = {
       ID: 2,
-      Text: "BP Tankstelle",
-      Date: "2016-11-15T00:00:00",
+      Text: 'BP Tankstelle',
+      Date: '2016-11-15T00:00:00',
       Amount: 650,
       Paid: false,
       Expense: false,
       Remark: true,
-      Details: null
+      Details: null,
     };
   });
 
-  it("returns true when correct data is passed", function() {
-    expect(VoucherValidator.validate(goodvoucher)).toEqual(true);
-  });
+  it('returns true when correct data is passed', () =>
+    expect(VoucherValidator.validate(goodvoucher)).toEqual(true));
 
-  it("returns false when bad data is passed", function() {
-    expect(VoucherValidator.validate(badvoucher)).toEqual(false);
-  });
+  it('returns false when bad data is passed', () =>
+    expect(VoucherValidator.validate(badvoucher)).toEqual(false));
 
-  it("returns false when null is passed as Details", function() {
-    expect(VoucherValidator.validate(nullVoucher)).toEqual(false);
-  });
+  it('returns false when null is passed as Details', () =>
+    expect(VoucherValidator.validate(nullVoucher)).toEqual(false));
 });

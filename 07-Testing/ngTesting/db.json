@@ -47,7 +47,7 @@
     {
       "url": "integrationtests",
       "title": "Integration Tests",
-      "component": "ShallowIntegrationComponent",
+      "component": "IntegrationTestComponent",
       "id": 6,
       "topicid": 1,
       "visible": true,

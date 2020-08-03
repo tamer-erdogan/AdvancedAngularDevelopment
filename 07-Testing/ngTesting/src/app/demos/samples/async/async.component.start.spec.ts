@@ -2,11 +2,10 @@ import { of } from 'rxjs';
 import { AsyncComponent } from './async.component';
 import { SimpleAuthService } from './simple-auth.service';
 
-//Problems with sync test
+// Problems with sync test
 describe('Component: Login - Symetric Test', () => {
   let component: AsyncComponent;
   let service: SimpleAuthService;
-  let spy: any;
 
   beforeEach(() => {
     service = new SimpleAuthService();
@@ -19,7 +18,7 @@ describe('Component: Login - Symetric Test', () => {
 
   it('canLogin returns false when the user is not authenticated', () => {
     localStorage.setItem('token', '12345');
-    //Uncomment this later
+    // Uncomment this later
     // expect(component.needsLogin).toBeFalsy();
   });
 
@@ -43,7 +42,7 @@ describe('Component: Login - Spy', () => {
   it('canLogin returns false when the user is not authenticated', () => {
     spy = spyOn(service, 'isAuthenticated').and.returnValue(of(false));
     expect(component.needsLogin).toBeTruthy();
-    //When performing testing we need to call component lifecycle hooks ourselves
+    // When performing testing we need to call component lifecycle hooks ourselves
     component.ngOnInit();
     expect(service.isAuthenticated).toHaveBeenCalled();
     expect(component.needsLogin).toBe(true);
