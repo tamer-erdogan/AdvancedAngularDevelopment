@@ -8,6 +8,8 @@
 
 [Airbnb Style Guide](https://github.com/webdev-tools/tslint-airbnb-styleguide)
 
+[Configuring CommonJS dependencies](https://angular.io/guide/build#configuring-commonjs-dependencies)
+
 ## Analyzing Bundles
 
 [Performance Budget Calculator](https://perf-budget-calculator.firebaseapp.com/)
