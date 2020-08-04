@@ -43,13 +43,15 @@ chrome://flags/#allow-insecure-localhost
 
 [OpenID Connect](https://connect2id.com/learn/openid-connect)
 
+### Angular Auth
+
+[MSAL for JavaScript](https://github.com/AzureAD/microsoft-authentication-library-for-js)
+
 ### .NET Core Auth
 
 [.NET Core Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-2.2&tabs=visual-studio)
 
 [.NET Core Authentication Snippets](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/microsoft-logins?view=aspnetcore-2.2)
-
-[MSAL for JavaScript](https://github.com/AzureAD/microsoft-authentication-library-for-js)
 
 ### Could Accounts:
 
