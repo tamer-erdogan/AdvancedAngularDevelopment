@@ -100,18 +100,12 @@ Kenntnisse im Umgang mit Git
 - Using Linting and Autoformat with Prettier
 - Using Chrome Dev Tools & Lighthouse for Performance Optimization
 - Understanding & Using Page Traces
+- Understanding Ivy and what it means for future Angular Releases
 - Advanced Angular Debugging using @angular/core/global
 - Analyzing and Optimizing Bundles & Modules
 - Code-Splitting and Module Pre-Loading
 - Understaning & Optimizing Angular Change Detection
 - Optimize Change Detection using @ngrx/component & ngrxPush
-
-## Understanding Ivy and what it means for future Angular Releases
-
-- Ivy Renderer Overview
-- AOT Compilation & Type-checking Templates
-- Standalone Components using Ivy
-- Higher Order Components (HOC)
 
 ## Reactive Forms Deep Dive
 
