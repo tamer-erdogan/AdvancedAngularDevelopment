@@ -20,6 +20,11 @@ import { AuthModule } from '../auth/auth.module';
 import { LoginComponent } from '../auth/components/login/login.component';
 import { RegisterComponent } from '../auth/components/register/register.component';
 import { LogoutComponent } from '../auth/components/logout/logout.component';
+import { LocServiceComponent } from './samples/loc-service/loc-service.component';
+import { AppInitComponent } from './samples/app-init/app-init.component';
+import { MultiGuardComponent } from './samples/multi-guard/multi-guard.component';
+import { MultiInterceptorComponent } from './samples/multi-interceptor/multi-interceptor.component';
+import { GlobalErrorsComponent } from './samples/global-errors/global-errors.component';
 
 const demoRoutes: Routes = [
   {
@@ -29,22 +34,42 @@ const demoRoutes: Routes = [
       {
         path: 'routing',
         component: RoutingComponent,
-        children: [{ path: ':id', component: RoutingTargetComponent }]
+        children: [{ path: ':id', component: RoutingTargetComponent }],
       },
       {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
       },
       {
         path: 'register',
-        component: RegisterComponent
+        component: RegisterComponent,
       },
       {
         path: 'logout',
-        component: LogoutComponent
-      }
-    ]
-  }
+        component: LogoutComponent,
+      },
+      {
+        path: 'locationsrv',
+        component: LocServiceComponent,
+      },
+      {
+        path: 'app-init',
+        component: AppInitComponent,
+      },
+      {
+        path: 'multi-guard',
+        component: MultiGuardComponent,
+      },
+      {
+        path: 'multi-interceptor',
+        component: MultiInterceptorComponent,
+      },
+      {
+        path: 'global-errors',
+        component: GlobalErrorsComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
@@ -52,7 +77,12 @@ const demoRoutes: Routes = [
     DemoContainerComponent,
     MarkdownEditorComponent,
     RoutingComponent,
-    RoutingTargetComponent
+    RoutingTargetComponent,
+    LocServiceComponent,
+    AppInitComponent,
+    MultiGuardComponent,
+    MultiInterceptorComponent,
+    GlobalErrorsComponent,
   ],
   imports: [
     CommonModule,
@@ -64,12 +94,12 @@ const demoRoutes: Routes = [
     MaterialModule,
     HttpClientModule,
     MarkdownModule.forRoot({
-      loader: HttpClient
+      loader: HttpClient,
     }),
     SharedModule,
     StoreModule.forFeature(demosFeatureKey, DemosReducer),
-    EffectsModule.forFeature([DemosEffects])
+    EffectsModule.forFeature([DemosEffects]),
   ],
-  providers: [SkillsService]
+  providers: [SkillsService],
 })
 export class DemosModule {}

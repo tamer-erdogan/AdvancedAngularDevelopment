@@ -1,15 +1,15 @@
 # Building an Reusable Angular Theme
 
-- Material Themeing Overview
-- Define Primary, Accent and Warning Colors
-- Building a Reusable Material Theme
-- Define Alternative Themes
-- Use Fore- and Backcolor
-- Use Theme Mixins
-- Theming Custom Components
-- Bootstrap vs Angular Material
+- Styling Angular Components Deep Dive
+- Comparing Angular Material & Bootstrap
 - Bootstrap Resets, Layout Helper & Utiliies
 - Best of Both: Combining Bootstrap & Angular Material
+- Theming Overview
+- Building a Reusable Theme
+- Define Alternative Themes
+- Use Fore- and Back-Color
+- Use Theme Mixins
+- Theming Custom Components
 
 ## Theming
 

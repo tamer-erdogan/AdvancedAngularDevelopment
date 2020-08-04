@@ -1,6 +1,51 @@
 {
   "demos": [
     {
+      "url": "locationsrv",
+      "title": "Location Service",
+      "component": "LocServiceComponent",
+      "id": 5,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "app-init",
+      "title": "App Init",
+      "component": "AppInitComponent",
+      "id": 6,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "multi-guard",
+      "title": "Route Guards",
+      "component": "MultiGuardComponent",
+      "id": 7,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "multi-interceptor",
+      "title": "Interceptors",
+      "component": "MultiInterceptorComponent",
+      "id": 8,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "url": "global-errors",
+      "title": "Global Errors",
+      "component": "GlobalErrorsComponent",
+      "id": 9,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
       "url": "routing",
       "title": "Routing NgRx",
       "component": "RoutingComponent",
