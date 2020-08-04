@@ -10,10 +10,12 @@ Im Seminar "Advanced Angular Development" bringen wir Ihre Angular Kenntnisse au
 - Optimizing & Building Applications
 - Understanding & using Ivy
 - Reactive Forms Deep Dive
+- Advanced Routing Concepts
 - Securing Angular using oAuth, OpenID Connect & NgRx
 - Advanced Testing including Jest & Cypress
 - Scaffolding & Automation using Angular Schematics
-- Reusability using Angular Libraries & NX
+- Reusability using Angular Libraries
+- Introduction to Maintaining Monorepos using nrwl nx
 - Web Components using Angular Elements & Dynamic Components
 - Implementing Installable & Offline Ready Apps using Progressive Web Apps
 - Server Side Rendering using Angular Universal
