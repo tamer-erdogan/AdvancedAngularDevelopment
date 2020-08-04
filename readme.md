@@ -124,7 +124,6 @@ Kenntnisse im Umgang mit Git
 ## Routing & Securing Angular using NgRx
 
 - Angular Location Service
-
 - Using multible Route Guards & Interceptors
 - Introduction to @ngrx/router-store
 - Implementing Global Error Handling
