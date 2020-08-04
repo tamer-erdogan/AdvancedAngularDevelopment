@@ -121,11 +121,16 @@ Kenntnisse im Umgang mit Git
 
 ## Routing & Securing Angular using NgRx
 
+- Angular Location Service
+
+- Using multible Route Guards & Interceptors
 - Introduction to @ngrx/router-store
+- Implementing Global Error Handling
+- AppShell & App Initialization
 - Router State & Custom Serialization
 - Route Guards & Interceptors with NgRx
-- Using multible Interceptors
 - Routing & App Initialization
+- Dynamic Component Loading
 - Recap Jwt, OAuth 2.0 & OpenID Connect
 - Cloud based Logins: Azure AD
 - Using Social & Cloud Logins: MSAL, Google, Facebook ...
@@ -159,13 +164,12 @@ Kenntnisse im Umgang mit Git
 - Understanding & using Monorepos
 - Introduction to nrwl NX
 
-## Web Components using Angular Elements & Dynamic Components
+## Web Components using Angular Elements
 
 - Why Web Components
 - Understanding Shadow DOM, Templates & Custom Elements
 - Creating reusable Web Components using Angular Elements
 - Addressing Browser Compatibility Issues
-- Using Dynamic Component Loader
 
 ## Server Side Rendering (SSR) using Angular Universal
 
