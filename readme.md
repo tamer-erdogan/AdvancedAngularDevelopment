@@ -8,7 +8,7 @@ Im Seminar "Advanced Angular Development" bringen wir Ihre Angular Kenntnisse au
 - Advanced Observables & Reactive Programming
 - State Management using NgRx
 - Optimizing & Building Applications
-- Understanding & using Ivy
+- Understanding Ivy and what it means for future Angular Releases
 - Reactive Forms Deep Dive
 - Advanced Routing Concepts
 - Securing Angular using oAuth, OpenID Connect & NgRx
@@ -106,7 +106,7 @@ Kenntnisse im Umgang mit Git
 - Understaning & Optimizing Angular Change Detection
 - Optimize Change Detection using @ngrx/component & ngrxPush
 
-## Understanding & using Ivy
+## Understanding Ivy and what it means for future Angular Releases
 
 - Ivy Renderer Overview
 - AOT Compilation & Type-checking Templates
