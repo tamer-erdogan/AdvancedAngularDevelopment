@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   authEnabled: false,
-  title: 'ngSecurity',
+  title: 'ngRouting & Security',
   markdownPath: '/assets/markdown/',
   apiUrl: 'http://localhost:3000/',
   firebaseConfig: {
@@ -11,6 +11,6 @@ export const environment = {
     projectId: 'ngdemoapp',
     storageBucket: 'ngdemoapp.appspot.com',
     messagingSenderId: '730215427488',
-    appId: '1:730215427488:web:001d99d407deae1c2488c5'
-  }
+    appId: '1:730215427488:web:001d99d407deae1c2488c5',
+  },
 };
