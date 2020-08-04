@@ -25,6 +25,10 @@ import { AppInitComponent } from './samples/app-init/app-init.component';
 import { MultiGuardComponent } from './samples/multi-guard/multi-guard.component';
 import { MultiInterceptorComponent } from './samples/multi-interceptor/multi-interceptor.component';
 import { GlobalErrorsComponent } from './samples/global-errors/global-errors.component';
+import { MembersComponent } from './samples/multi-guard/members/members.component';
+import { PrimeComponent } from './samples/multi-guard/prime/prime.component';
+import { OnlyAuthenticatedGuard } from './samples/multi-guard/only-authenticated.guard';
+import { OnlyPrimeMembersGuard } from './samples/multi-guard/only-prime-members.guard';
 
 const demoRoutes: Routes = [
   {
@@ -59,6 +63,18 @@ const demoRoutes: Routes = [
       {
         path: 'multi-guard',
         component: MultiGuardComponent,
+        children: [
+          {
+            path: 'members',
+            component: MembersComponent,
+            canActivate: [OnlyAuthenticatedGuard],
+          },
+          {
+            path: 'prime',
+            component: PrimeComponent,
+            canActivate: [OnlyAuthenticatedGuard, OnlyPrimeMembersGuard],
+          },
+        ],
       },
       {
         path: 'multi-interceptor',
@@ -83,6 +99,8 @@ const demoRoutes: Routes = [
     MultiGuardComponent,
     MultiInterceptorComponent,
     GlobalErrorsComponent,
+    MembersComponent,
+    PrimeComponent,
   ],
   imports: [
     CommonModule,
