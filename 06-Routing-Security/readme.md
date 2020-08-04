@@ -37,7 +37,7 @@ Get Chrome to trust self signed localhost:
 chrome://flags/#allow-insecure-localhost
 ```
 
-## Auth Bascis
+## Token based Authentication
 
 [JSON Web Tokens - Jwt](https://jwt.io/)
 
