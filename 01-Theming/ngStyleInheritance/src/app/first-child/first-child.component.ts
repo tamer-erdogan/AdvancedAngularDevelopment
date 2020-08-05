@@ -9,7 +9,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styles: [
     `
       .divclass {
-        border: blue 2px solid;
+        border: blue 4px solid;
       }
     `,
   ],

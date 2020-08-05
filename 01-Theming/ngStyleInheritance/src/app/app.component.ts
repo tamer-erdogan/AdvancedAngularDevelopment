@@ -19,12 +19,6 @@ import { Component } from '@angular/core';
         margin: 1rem;
       }
 
-      .divclass {
-        padding: 1rem;
-        margin: 1rem;
-        border: 2px solid red;
-      }
-
       div {
         margin: 3rem;
       }

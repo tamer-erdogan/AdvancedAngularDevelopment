@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-second-child',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: [
     `
       .divclass {
-        border: green 2px solid;
+        border: green 4px solid;
       }
     `,
   ],
