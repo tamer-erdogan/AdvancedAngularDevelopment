@@ -2,6 +2,8 @@
 
 [Angular Universal](https://angular.io/guide/universal)
 
+[AppShell](https://angular.io/guide/app-shell)
+
 ## Configure Angular Universal
 
 Create project and add Universal:

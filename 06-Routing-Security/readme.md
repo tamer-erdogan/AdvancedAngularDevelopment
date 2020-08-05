@@ -2,8 +2,6 @@
 
 ## Routing
 
-[AppShell](https://angular.io/guide/app-shell)
-
 ### Routing and NgRx
 
 Add Routing:
