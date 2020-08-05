@@ -29,6 +29,15 @@
       "sortOrder": 0
     },
     {
+      "url": "dynamic-loading",
+      "title": "Dynamic Components",
+      "component": "DynamicLoadingComponent",
+      "id": 14,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
       "url": "multi-interceptor",
       "title": "Interceptors",
       "component": "MultiInterceptorComponent",

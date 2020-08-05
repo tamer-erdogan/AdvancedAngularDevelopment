@@ -29,6 +29,7 @@ import { MembersComponent } from './samples/multi-guard/members/members.componen
 import { PrimeComponent } from './samples/multi-guard/prime/prime.component';
 import { OnlyAuthenticatedGuard } from './samples/multi-guard/only-authenticated.guard';
 import { OnlyPrimeMembersGuard } from './samples/multi-guard/only-prime-members.guard';
+import { DynamicLoadingComponent } from './samples/dynamic-loading/dynamic-loading.component';
 
 const demoRoutes: Routes = [
   {
@@ -59,6 +60,10 @@ const demoRoutes: Routes = [
       {
         path: 'app-init',
         component: AppInitComponent,
+      },
+      {
+        path: 'dynamic-loading',
+        component: DynamicLoadingComponent,
       },
       {
         path: 'multi-guard',
@@ -101,6 +106,7 @@ const demoRoutes: Routes = [
     GlobalErrorsComponent,
     MembersComponent,
     PrimeComponent,
+    DynamicLoadingComponent,
   ],
   imports: [
     CommonModule,

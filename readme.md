@@ -16,7 +16,7 @@ Im Seminar "Advanced Angular Development" bringen wir Ihre Angular Kenntnisse au
 - Scaffolding & Automation using Angular Schematics
 - Reusability using Angular Libraries
 - Introduction to Maintaining Monorepos using nrwl nx
-- Web Components using Angular Elements & Dynamic Components
+- Web Components using Angular Elements
 - Implementing Installable & Offline Ready Apps using Progressive Web Apps
 - Server Side Rendering using Angular Universal
 - Advanced Hosting using Docker & Kubernetes
