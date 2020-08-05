@@ -26,7 +26,7 @@ import { Component } from '@angular/core';
       }
 
       div {
-        margin: 1.5rem;
+        margin: 3rem;
       }
     `,
   ],
