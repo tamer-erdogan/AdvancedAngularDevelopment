@@ -47,6 +47,10 @@ chrome://flags/#allow-insecure-localhost
 
 [MSAL for JavaScript](https://github.com/AzureAD/microsoft-authentication-library-for-js)
 
+[MSAL for Angular](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angular)
+
+[MSAL Excample](https://docs.microsoft.com/en-us/samples/azure-samples/active-directory-javascript-singlepageapp-angular/active-directory-javascript-singlepageapp-angular/)
+
 ### .NET Core Auth
 
 [.NET Core Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-2.2&tabs=visual-studio)
@@ -64,4 +68,3 @@ chrome://flags/#allow-insecure-localhost
 [Azure Trial](https://azure.microsoft.com/en-us/free/)
 
 [Azure Passes](https://www.microsoftazurepass.com/)
-
