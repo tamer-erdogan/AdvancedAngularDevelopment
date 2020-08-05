@@ -9,7 +9,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
         border: black 4px solid;
       }
 
-      :host ;
+      :host-context h3 {
+        color: red !important;
+      }
     `,
   ],
 })

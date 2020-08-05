@@ -4,6 +4,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   selector: 'app-first-child',
   template: `
     <div class="divclass">First Child</div>
+    <h3>Never had a span like this</h3>
     <app-nested-child></app-nested-child>
   `,
   styles: [

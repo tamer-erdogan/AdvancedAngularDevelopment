@@ -22,6 +22,12 @@ import { Component } from '@angular/core';
       div {
         margin: 3rem;
       }
+
+      /* :host {
+        border: 5rem solid dimgray;
+        display: block;
+        padding: 20px;
+      } */
     `,
   ],
 })
