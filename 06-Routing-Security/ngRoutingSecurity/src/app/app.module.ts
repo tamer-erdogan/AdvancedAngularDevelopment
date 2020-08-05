@@ -20,6 +20,7 @@ import { reducers } from './store';
 import { CustomSerializer } from './store/reducers/router.reducer';
 import { AuthModule } from './auth/auth.module';
 import { FBAuthInterceptor } from './auth/fbauth.interceptor';
+import { interceptorProvider } from './interceptors/interceptor-provider';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -44,11 +45,12 @@ import { FBAuthInterceptor } from './auth/fbauth.interceptor';
   ],
   providers: [
     { provide: RouterStateSerializer, useClass: CustomSerializer },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: FBAuthInterceptor,
-      multi: true,
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: FBAuthInterceptor,
+    //   multi: true,
+    // },
+    interceptorProvider,
   ],
   bootstrap: [AppComponent],
 })
