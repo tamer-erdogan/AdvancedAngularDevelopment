@@ -1,5 +1,5 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
@@ -21,9 +21,11 @@ import { CustomSerializer } from './store/reducers/router.reducer';
 import { AuthModule } from './auth/auth.module';
 import { FBAuthInterceptor } from './auth/fbauth.interceptor';
 import { interceptorProvider } from './interceptors/interceptor-provider';
+import { ErrHandlerService } from './error/err-handler.service';
+import { ErrPageComponent } from './error/err-page/err-page.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, ErrPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -44,12 +46,13 @@ import { interceptorProvider } from './interceptors/interceptor-provider';
     }),
   ],
   providers: [
+    { provide: ErrorHandler, useClass: ErrHandlerService },
     { provide: RouterStateSerializer, useClass: CustomSerializer },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: FBAuthInterceptor,
-    //   multi: true,
-    // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: FBAuthInterceptor,
+      multi: true,
+    },
     interceptorProvider,
   ],
   bootstrap: [AppComponent],
