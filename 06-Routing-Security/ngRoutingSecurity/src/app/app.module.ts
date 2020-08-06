@@ -1,5 +1,5 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
@@ -23,7 +23,14 @@ import { FBAuthInterceptor } from './auth/fbauth.interceptor';
 import { GlobalErrHandler } from './error/global-err-handler';
 import { ErrPageComponent } from './error/err-page/err-page.component';
 import { HttpErrorInterceptor } from './error/globle-http-err-handler';
+import { AppInitService } from './app-init/app-init.service';
 // import { interceptorProvider } from './interceptors/interceptor-provider';
+
+export function initApp(appInitService: AppInitService) {
+  return (): Promise<any> => {
+    return appInitService.Init();
+  };
+}
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, ErrPageComponent],
@@ -47,6 +54,13 @@ import { HttpErrorInterceptor } from './error/globle-http-err-handler';
     }),
   ],
   providers: [
+    AppInitService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initApp,
+      deps: [AppInitService],
+      multi: true,
+    },
     { provide: RouterStateSerializer, useClass: CustomSerializer },
     {
       provide: HTTP_INTERCEPTORS,
