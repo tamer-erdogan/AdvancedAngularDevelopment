@@ -1,7 +1,12 @@
-@import "resets.scss";
-@import "theme.scss";
-@import "stylevars.scss";
-@import "mat-overrides.scss";
+@import 'resets.scss';
+@import 'theme.scss';
+@import 'stylevars.scss';
+@import 'mat-overrides.scss';
+
+@import 'prismjs/themes/prism-okaidia.css';
+@import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+@import 'prismjs/plugins/line-highlight/prism-line-highlight.css';
+
 // @import "tables.scss";
 // @import "forms.scss";
 

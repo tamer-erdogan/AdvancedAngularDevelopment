@@ -36,6 +36,7 @@
     "firebase": "^6.6.2",
     "ngx-markdown": "^10.1.0",
     "ngx-xml2json": "^1.0.2",
+    "prismjs": "^1.20.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
