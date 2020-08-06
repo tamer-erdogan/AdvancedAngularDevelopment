@@ -11,11 +11,6 @@ export class GlobalErrorsComponent implements OnInit {
   ngOnInit(): void {}
 
   throwErr() {
-    try {
-      const a = 10 / 0;
-      console.log(a);
-    } catch (error) {
-      throw error;
-    }
+    throw new Error('A demo error is thrown');
   }
 }

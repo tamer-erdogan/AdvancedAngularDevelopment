@@ -21,7 +21,7 @@ import { CustomSerializer } from './store/reducers/router.reducer';
 import { AuthModule } from './auth/auth.module';
 import { FBAuthInterceptor } from './auth/fbauth.interceptor';
 import { interceptorProvider } from './interceptors/interceptor-provider';
-import { ErrHandlerService } from './error/err-handler.service';
+import { GlobalErrHandler } from './error/global-err-handler';
 import { ErrPageComponent } from './error/err-page/err-page.component';
 
 @NgModule({
@@ -46,14 +46,13 @@ import { ErrPageComponent } from './error/err-page/err-page.component';
     }),
   ],
   providers: [
-    { provide: ErrorHandler, useClass: ErrHandlerService },
+    { provide: ErrorHandler, useClass: GlobalErrHandler },
     { provide: RouterStateSerializer, useClass: CustomSerializer },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: FBAuthInterceptor,
       multi: true,
     },
-    interceptorProvider,
   ],
   bootstrap: [AppComponent],
 })
