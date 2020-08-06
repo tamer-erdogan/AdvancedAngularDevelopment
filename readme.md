@@ -8,13 +8,15 @@ Im Seminar "Advanced Angular Development" bringen wir Ihre Angular Kenntnisse au
 - Advanced Observables & Reactive Programming
 - State Management using NgRx
 - Optimizing & Building Applications
-- Understanding & using Ivy
+- Understanding Ivy and what it means for future Angular Releases
 - Reactive Forms Deep Dive
+- Advanced Routing Concepts
 - Securing Angular using oAuth, OpenID Connect & NgRx
 - Advanced Testing including Jest & Cypress
 - Scaffolding & Automation using Angular Schematics
-- Reusability using Angular Libraries & NX
-- Web Components using Angular Elements & Dynamic Components
+- Reusability using Angular Libraries
+- Introduction to Maintaining Monorepos using nrwl nx
+- Web Components using Angular Elements
 - Implementing Installable & Offline Ready Apps using Progressive Web Apps
 - Server Side Rendering using Angular Universal
 - Advanced Hosting using Docker & Kubernetes
@@ -53,16 +55,16 @@ Kenntnisse im Umgang mit Git
 
 ## Building an Reusable Angular Theme
 
-- Material Themeing Overview
-- Define Primary, Accent and Warning Colors
-- Building a Reusable Material Theme
-- Define Alternative Themes
-- Use Fore- and Backcolor
-- Use Theme Mixins
-- Theming Custom Components
-- Bootstrap vs Angular Material
+- Styling Angular Components Deep Dive
+- Comparing Angular Material & Bootstrap
 - Bootstrap Resets, Layout Helper & Utiliies
 - Best of Both: Combining Bootstrap & Angular Material
+- Theming Overview
+- Building a Reusable Theme
+- Define Alternative Themes
+- Use Fore- and Back-Color
+- Use Theme Mixins
+- Theming Custom Components
 
 ## Advanced Observables & Reactive Programming
 
@@ -98,34 +100,32 @@ Kenntnisse im Umgang mit Git
 - Using Linting and Autoformat with Prettier
 - Using Chrome Dev Tools & Lighthouse for Performance Optimization
 - Understanding & Using Page Traces
+- Understanding Ivy and what it means for future Angular Releases
 - Advanced Angular Debugging using @angular/core/global
 - Analyzing and Optimizing Bundles & Modules
 - Code-Splitting and Module Pre-Loading
 - Understaning & Optimizing Angular Change Detection
 - Optimize Change Detection using @ngrx/component & ngrxPush
 
-## Understanding & using Ivy
-
-- Ivy Renderer Overview
-- AOT Compilation & Type-checking Templates
-- Standalone Components using Ivy
-- Higher Order Components (HOC)
-
 ## Reactive Forms Deep Dive
 
-- Recap Reactive Forms Revisited (FormControl, Forms Array, Form Builder)
+- Recap Reactive Forms Revisited (Form Builder, FormControl, Forms Array, ... )
 - Async Pipe & Declarative Binding
 - Implementing Custom Validatiors
 - Cascading Form Controls
-- Dynamic Form Generation & Validation (Manual & ngx-formly)
+- Dynamic Form Generation & Validation
 
 ## Routing & Securing Angular using NgRx
 
+- Angular Location Service
+- Using multible Route Guards & Interceptors
 - Introduction to @ngrx/router-store
+- Implementing Global Error Handling
+- AppShell & App Initialization
 - Router State & Custom Serialization
 - Route Guards & Interceptors with NgRx
-- Using multible Interceptors
 - Routing & App Initialization
+- Dynamic Component Loading
 - Recap Jwt, OAuth 2.0 & OpenID Connect
 - Cloud based Logins: Azure AD
 - Using Social & Cloud Logins: MSAL, Google, Facebook ...
@@ -159,13 +159,12 @@ Kenntnisse im Umgang mit Git
 - Understanding & using Monorepos
 - Introduction to nrwl NX
 
-## Web Components using Angular Elements & Dynamic Components
+## Web Components using Angular Elements
 
 - Why Web Components
 - Understanding Shadow DOM, Templates & Custom Elements
 - Creating reusable Web Components using Angular Elements
 - Addressing Browser Compatibility Issues
-- Using Dynamic Component Loader
 
 ## Server Side Rendering (SSR) using Angular Universal
 
