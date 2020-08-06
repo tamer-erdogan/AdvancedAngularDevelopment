@@ -30,6 +30,7 @@ import { RoutingTargetComponent } from './samples/routing/routing-target/routing
 import { RoutingComponent } from './samples/routing/routing/routing.component';
 import { DemosEffects } from './store/effects/demos.effects';
 import { demosFeatureKey, DemosReducer } from './store/reducers/demos.reducer';
+import { HttpErrorsComponent } from './samples/http-errors/http-errors.component';
 
 const demoRoutes: Routes = [
   {
@@ -89,6 +90,10 @@ const demoRoutes: Routes = [
         path: 'global-errors',
         component: GlobalErrorsComponent,
       },
+      {
+        path: 'http-errors',
+        component: HttpErrorsComponent,
+      },
     ],
   },
 ];
@@ -107,6 +112,7 @@ const demoRoutes: Routes = [
     MembersComponent,
     PrimeComponent,
     DynamicLoadingComponent,
+    HttpErrorsComponent,
   ],
   imports: [
     CommonModule,

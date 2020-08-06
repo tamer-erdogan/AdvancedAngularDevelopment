@@ -20,9 +20,9 @@ import { reducers } from './store';
 import { CustomSerializer } from './store/reducers/router.reducer';
 import { AuthModule } from './auth/auth.module';
 import { FBAuthInterceptor } from './auth/fbauth.interceptor';
-import { interceptorProvider } from './interceptors/interceptor-provider';
 import { GlobalErrHandler } from './error/global-err-handler';
 import { ErrPageComponent } from './error/err-page/err-page.component';
+// import { interceptorProvider } from './interceptors/interceptor-provider';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, ErrPageComponent],
@@ -53,6 +53,7 @@ import { ErrPageComponent } from './error/err-page/err-page.component';
       useClass: FBAuthInterceptor,
       multi: true,
     },
+    // ,interceptorProvider,
   ],
   bootstrap: [AppComponent],
 })

@@ -12,6 +12,7 @@ export class AuthInterceptorService {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    console.log('AuthInterceptorService');
     if (this.auth.isAuthenticated) {
       request = request.clone({
         headers: request.headers.set(

@@ -19,6 +19,7 @@ export class FormatInterceptorService {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    console.log('FormatInterceptorService');
     req = req.clone({ responseType: 'text' });
 
     return next.handle(req).pipe(

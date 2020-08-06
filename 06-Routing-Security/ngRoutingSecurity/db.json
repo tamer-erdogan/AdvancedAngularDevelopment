@@ -56,6 +56,15 @@
       "sortOrder": 0
     },
     {
+      "url": "http-errors",
+      "title": "Http Errors",
+      "component": "HttpErrorsComponent",
+      "id": 13,
+      "topicid": 1,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
       "url": "routing",
       "title": "Routing NgRx",
       "component": "RoutingComponent",
