@@ -82,15 +82,15 @@ export class ReactiveValidationComponent implements OnInit {
 
     if (errs != null) {
       console.log('Errors in Name field: ', errs);
-      if (errs['minlength']) {
+      if (errs.minlength) {
         result = true;
       }
     }
     return result;
   }
 
-  validateForm(form) {
-    form.updateValueAndValidity();
-    form.controls['name'].updateValueAndValidity();
+  validateForm() {
+    this.personForm.updateValueAndValidity();
+    this.personForm.controls.name.updateValueAndValidity();
   }
 }
