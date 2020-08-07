@@ -109,11 +109,12 @@ Kenntnisse im Umgang mit Git
 
 ## Reactive Forms Deep Dive
 
-- Recap Reactive Forms Revisited (Form Builder, FormControl, Forms Array, ... )
-- Async Pipe & Declarative Binding
-- Implementing Custom Validatiors
+- Recap Reactive Forms Revisited (FormGroup, Form Builder, FormControl, Forms Array)
+- Form Validation
+- Implementing Custom Validators
 - Cascading Form Controls
-- Dynamic Form Generation & Validation
+- Dynamic Form Generation & Validation (Manual & ngx-formly)
+- Declarative Binding in Reactive Forms using RxJS
 
 ## Routing & Securing Angular using NgRx
 
