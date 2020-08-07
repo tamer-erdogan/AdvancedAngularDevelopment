@@ -25,14 +25,6 @@
       "sortOrder": 2
     },
     {
-      "url": "async-pipe",
-      "topicid": 3,
-      "title": "Async Pipe",
-      "component": "AsyncPipeComponent",
-      "visible": true,
-      "sortOrder": 3
-    },
-    {
       "url": "validation",
       "topicid": 4,
       "title": "Custom Validators",
@@ -55,6 +47,14 @@
       "component": "ReactiveCascadeComponent",
       "visible": true,
       "sortOrder": 5
+    },
+    {
+      "url": "async-pipe",
+      "topicid": 3,
+      "title": "Async Pipe",
+      "component": "AsyncPipeComponent",
+      "visible": true,
+      "sortOrder": 3
     },
     {
       "url": "ngx-formly",
