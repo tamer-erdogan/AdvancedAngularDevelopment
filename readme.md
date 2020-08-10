@@ -200,3 +200,9 @@ Kenntnisse im Umgang mit Git
 - Implementing Configuration Management for Containers
 - Implementing a Helm Chart for Kubernetes
 - Introduction to Angular DevOps using GitHub Actions
+
+## Links
+
+- https://nx.dev/
+- https://bazel.angular.io/ ist deprecated in Angular 10.
+- https://augury.rangle.io/ angular debugging
