@@ -4,7 +4,7 @@ Im Seminar "Advanced Angular Development" bringen wir Ihre Angular Kenntnisse au
 
 ## Themen
 
-- Building an Reusable Angular Theme
+- Theming & Visual Feedback (Animations)
 - Advanced Observables & Reactive Programming
 - State Management using NgRx
 - Optimizing & Building Applications
@@ -53,7 +53,7 @@ Kenntnisse im Umgang mit Git
 
 # Module
 
-## Building an Reusable Angular Theme
+## Theming & Visual Feedback (Animations)
 
 - Styling Angular Components Deep Dive
 - Comparing Angular Material & Bootstrap
@@ -65,6 +65,9 @@ Kenntnisse im Umgang mit Git
 - Use Fore- and Back-Color
 - Use Theme Mixins
 - Theming Custom Components
+- Introduction to Visual Feedback
+- In-Page Feedback (Saved, Loading Spinners, ...)
+- Implementing Page Transitions
 
 ## Advanced Observables & Reactive Programming
 
@@ -158,7 +161,7 @@ Kenntnisse im Umgang mit Git
 - Sharing Code between Projects using Angular Libraries
 - Implementing, Using & Publishing Libraries
 - Understanding & using Monorepos
-- Introduction to nrwl NX
+- Developing in Monorepos with nrwl NX
 
 ## Web Components using Angular Elements
 
@@ -172,8 +175,9 @@ Kenntnisse im Umgang mit Git
 - Why Server Side Rendering
 - Angular Universal Architecture
 - Node Express Introduction
-- Konfigure Server Side Rendering
+- Configure Server Side Rendering
 - Prerender static pages
+- Using App Shell
 
 ## Progressive Web Apps (PWA)
 
@@ -182,6 +186,7 @@ Kenntnisse im Umgang mit Git
 - Installing & Updating Progressive Web Apps
 - Supporting Offline Availability
 - Implementing Push Notifications
+- Using App Shell
 
 ## Advanced Hosting using Docker & Angular DevOps
 
