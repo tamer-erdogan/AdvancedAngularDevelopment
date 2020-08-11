@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 import { Skill } from '../models/skill.model';
 
+// Action Type -> Enum
 export enum SkillActionTypes {
   LoadSkills = '[Skill] Load Skills',
   LoadSkills_Success = '[Skill] Load Skills Success',
@@ -10,6 +11,7 @@ export enum SkillActionTypes {
   ToggleComplete = '[Skill] ToggleComplete',
 }
 
+// Action Creator
 export class LoadSkillsAction implements Action {
   readonly type = SkillActionTypes.LoadSkills;
 }

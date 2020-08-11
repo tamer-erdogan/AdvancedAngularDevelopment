@@ -12,6 +12,11 @@ import { AboutComponent } from "./about/about.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "./material.module";
 import { FoodModule } from "./food/food.module";
+import { StoreModule } from "@ngrx/store";
+import { reducers, metaReducers } from "./store";
+import { EffectsModule } from "@ngrx/effects";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { environment } from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -20,7 +25,7 @@ import { FoodModule } from "./food/food.module";
     SidebarComponent,
     MainComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,9 +35,18 @@ import { FoodModule } from "./food/food.module";
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FoodModule
+    FoodModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+      },
+    }),
+    EffectsModule.forRoot([]),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -11,7 +11,7 @@ import { SkillsState } from "../store/reducers/skill.reducer";
 export class SkillsContainerComponent implements OnInit {
   constructor(private store: Store<SkillsState>) {}
 
-  //Note: Refactered to In-Module-Container to make it more realistic -> dispatches load
+  //TODO: Refactered to In-Module-Container to make it more realistic -> dispatches load
   ngOnInit() {
     this.store.dispatch(new LoadSkillsAction());
   }

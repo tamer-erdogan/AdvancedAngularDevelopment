@@ -206,3 +206,6 @@ Kenntnisse im Umgang mit Git
 - https://nx.dev/
 - https://bazel.angular.io/ ist deprecated in Angular 10.
 - https://augury.rangle.io/ angular debugging
+- https://material.io/design/layout/responsive-layout-grid.html#columns-gutters-and-margins
+- https://material.io/resources/color/#!/?view.left=0&view.right=0
+- https://www.learnrxjs.io/learn-rxjs/subjects/behaviorsubject
