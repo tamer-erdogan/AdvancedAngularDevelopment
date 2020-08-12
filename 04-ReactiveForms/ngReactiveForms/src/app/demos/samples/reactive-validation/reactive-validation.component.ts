@@ -76,7 +76,7 @@ export class ReactiveValidationComponent implements OnInit {
     return null;
   }
 
-  violatesMinLenght() {
+  violatesMinLength() {
     let result = false;
     const errs: ValidationErrors = this.personForm.controls.name.errors;
 

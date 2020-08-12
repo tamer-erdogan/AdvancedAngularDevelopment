@@ -20,7 +20,7 @@ export class PersonService {
     }).pipe(delay(1500));
   }
 
-  save(result: NgForm) {
+  save(personForm: NgForm) {
     console.log('ngForm:', result);
     console.log('value:', result.value);
   }

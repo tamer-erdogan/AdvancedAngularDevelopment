@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Person } from '../person.model';
 import { PersonService } from '../person.service';
 import { emptyPerson, wealthOpts } from '../empty-person';
@@ -10,12 +10,12 @@ import { emptyPerson, wealthOpts } from '../empty-person';
   styleUrls: ['./reactive-forms.component.scss'],
 })
 export class ReactiveFormsComponent implements OnInit {
-  constructor(private ps: PersonService) {}
-
   person: Person = emptyPerson;
   wealthOpts = wealthOpts;
 
   personForm: FormGroup;
+
+  constructor(private ps: PersonService) {}
 
   ngOnInit() {
     this.initForm();
@@ -28,7 +28,7 @@ export class ReactiveFormsComponent implements OnInit {
     });
 
     this.personForm = new FormGroup({
-      name: new FormControl(this.person.name),
+      name: new FormControl(this.person.name, Validators.required),
       age: new FormControl(this.person.age),
       email: new FormControl(this.person.email),
       gender: new FormControl(this.person.gender),

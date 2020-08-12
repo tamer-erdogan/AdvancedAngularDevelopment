@@ -9,7 +9,13 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 export class FormArrayComponent implements OnInit {
   public skillForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.initForm();
+  }
+
+  private initForm() {
     this.skillForm = this.fb.group({
       name: 'Giro',
       skillsGrp: this.fb.array([
@@ -17,8 +23,6 @@ export class FormArrayComponent implements OnInit {
       ]),
     });
   }
-
-  ngOnInit() {}
 
   addSkill() {
     const skillsGrp = this.skillForm.controls['skillsGrp'] as FormArray;
