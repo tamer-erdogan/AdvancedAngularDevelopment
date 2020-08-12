@@ -2,7 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { FoodItem } from "../food.model";
 import { FoodState } from "../store/reducers/food.reducer";
 import { Store } from "@ngrx/store";
-import { LoadFoods, SelectFood } from "../store/actions/food.actions";
+import {
+  LoadFoods,
+  SelectFood,
+  DeleteFood,
+} from "../store/actions/food.actions";
 import { Observable } from "rxjs";
 import { tap } from "rxjs/operators";
 import { getAllFood, getSelected } from "../store/selectors/food.selectors";
@@ -31,6 +35,7 @@ export class FoodContainerComponent implements OnInit {
 
   deleteFood(f: FoodItem) {
     console.log("deleting ", f);
+    this.store.dispatch(new DeleteFood(f));
     // this.food = this.food.filter(item => item.id != f.id);
   }
 

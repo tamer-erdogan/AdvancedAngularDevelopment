@@ -22,7 +22,7 @@ export const defaultFoodState: FoodState = {
 export const initialState = foodAdapter.getInitialState(defaultFoodState);
 
 export function FoodReducer(
-  state = initialState,
+  state: FoodState = initialState,
   action: FoodActions
 ): FoodState {
   switch (action.type) {
@@ -39,6 +39,10 @@ export function FoodReducer(
     }
     case FoodActionTypes.SelectFood: {
       return { ...state, selected: action.payload };
+    }
+    case FoodActionTypes.DeleteFood: {
+      const deletedData = state
+      return { ...state, selected: null };
     }
     default:
       return state;
