@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 import { DemoItem } from './demo-item.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DemoService {
   constructor(private httpClient: HttpClient) {}
