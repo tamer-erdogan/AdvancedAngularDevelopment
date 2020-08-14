@@ -1,11 +1,14 @@
 {
-  "name": "hello",
+  "name": "hello-schematics",
   "version": "0.0.0",
   "description": "A blank schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "build:watch": "tsc -p tsconfig.json --watch",
-    "test": "npm run build && jasmine src/**/*_spec.js"
+    "test": "npm run sandbox:ng-add && npm run test:sandbox",
+    "clean": "git checkout HEAD -- sandbox && git clean -f -d sandbox",
+    "link:schematic": "npm link && cd sandbox && npm link hello",
+    "launch:hello": "cd sandbox && ng g hello:hello",
+    "launch:helloparam": "cd sandbox && ng g hello:helloparam --name li --greeting Ahoj --dry-run false"
   },
   "keywords": [
     "schematics"
@@ -14,12 +17,14 @@
   "license": "MIT",
   "schematics": "./src/collection.json",
   "dependencies": {
-    "@angular-devkit/core": "^8.3.6",
-    "@angular-devkit/schematics": "^8.3.6",
-    "@schematics/angular": "^8.3.6",
-    "@types/jasmine": "^3.3.9",
-    "@types/node": "^8.0.31",
-    "jasmine": "^3.3.1",
-    "typescript": "~3.5.3"
+    "@angular-devkit/core": "^10.0.2",
+    "@angular-devkit/schematics": "^10.0.2",
+    "@schematics/angular": "^10.0.2",
+    "typescript": "~3.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.1",
+    "@types/jasmine": "~3.5.0",
+    "jasmine": "^3.5.0"
   }
 }
