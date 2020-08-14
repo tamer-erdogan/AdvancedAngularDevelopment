@@ -209,3 +209,52 @@ Kenntnisse im Umgang mit Git
 - https://material.io/design/layout/responsive-layout-grid.html#columns-gutters-and-margins
 - https://material.io/resources/color/#!/?view.left=0&view.right=0
 - https://www.learnrxjs.io/learn-rxjs/subjects/behaviorsubject
+
+- https://developer.mozilla.org/en-US/docs/Web/Web_Components
+- https://angular.io/guide/elements
+- https://material.angular.io/guide/theming#changing-styles-at-run-time
+- https://rxjs.dev/api/operators/mergeMap
+- https://www.learnrxjs.io/learn-rxjs/operators/utility/do
+- https://angular.io/api/forms/FormControl
+- https://angular.io/guide/observables
+- https://ncjamieson.com/connecting-components-with-reactive-forms/
+- https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
+
+- https://www.scnsoft.com/blog/java-reactive-programming
+- https://spring.io/reactive
+- https://projectreactor.io/
+- https://github.com/ReactiveX/RxJava/
+- https://developers.redhat.com/blog/2017/06/30/5-things-to-know-about-reactive-programming/
+- https://en.wikipedia.org/wiki/Reactive_programming
+- http://reactivex.io/
+- https://developer.okta.com/blog/2018/09/21/reactive-programming-with-spring
+- https://spring.io/blog/2016/06/07/notes-on-reactive-programming-part-i-the-reactive-landscape
+- https://www.reactivemanifesto.org/
+- https://blog.codefx.org/java/why-elvis-should-not-visit-java/
+
+- https://github.com/DanWahlin/Observable-Store
+- https://github.com/georgebyte/rxjs-observable-store
+- https://blog.angular-university.io/angular-2-redux-ngrx-rxjs/
+- https://dev.to/steveblue/redux-with-observable-stores-in-angular-1b3b
+
+- https://lab.github.com/githubtraining/devops-with-github-actions
+- https://github.com/collections/devops-tools
+- https://bitbucket.org/product/features/pipelines
+- https://angular.io/guide/npm-packages
+- https://blog.nrwl.io/12-things-to-help-large-organizations-do-angular-right-f261a798ad6b
+- https://medium.com/medialesson/angular-dependencies-and-versioning-5691beba463e
+- https://github.com/mgechev/angular-seed/wiki/Add-external-dependency
+- https://github.com/mgechev/angular-seed
+
+- https://www.polymer-project.org/
+- https://www.webcomponents.org/collection/GoogleWebComponents/google-web-components
+- https://github.com/GoogleWebComponents
+- https://en.wikipedia.org/wiki/Google_Web_Components
+
+* https://en.wikipedia.org/wiki/React_(web_framework)
+* https://jwt.io/
+* https://firebase.google.com/
+
+* https://www.tatilsepeti.com/serin-otel
+* https://en.wikipedia.org/wiki/Banyan
+* https://en.wikipedia.org/wiki/Ficus_benghalensis

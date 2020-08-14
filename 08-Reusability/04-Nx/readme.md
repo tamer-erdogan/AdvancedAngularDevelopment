@@ -30,10 +30,10 @@ Build the app `ng-skills`:
 
 ```
 ng build ng-skills |
-nx buils ng-skills
+nx builds ng-skills
 ```
 
-> Note: `nx buils ng-skills` uses cache and builds only when there are changes
+> Note: `nx builds ng-skills` uses cache and builds only when there are changes
 
 Test the app using Jest (default)
 
