@@ -21,8 +21,8 @@ describe('FoodService', () => {
       providers: [FoodService],
     });
 
-    service = TestBed.get(FoodService);
-    controller = TestBed.get(HttpTestingController);
+    service = TestBed.inject(FoodService);
+    controller = TestBed.inject(HttpTestingController);
   });
 
   it('should be created & made the initialized the data', (done) => {

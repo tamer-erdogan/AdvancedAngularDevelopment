@@ -4,6 +4,7 @@ import { of } from 'rxjs';
 
 describe('FoodComponent:', () => {
   let comp: FoodComponent;
+
   const foodData: FoodItem[] = [
     { name: 'Pad Thai', rating: 5 },
     { name: 'Butter Chicken', rating: 5 },
